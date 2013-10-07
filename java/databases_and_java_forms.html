@@ -1,0 +1,132 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+<p>In this section, you'll create a form with buttons and text fields. The buttons 
+  will be used to scroll forwards and backwards through the records in a database 
+  table. We'll also add buttons to perform other common database tasks. The form 
+  you'll design will look something like this:</p>
+<p align="center"><img src="images/databases/forms/form_newRecordC.gif" width="420" height="368" alt="The completed database  Java form"></p>
+<p>Start a new project for this by clicking <b>File &gt; New Project</b> from 
+  the NetBeans menu. When the dialogue box appears, select <b>Java &gt; Java Application</b>. 
+  On step one of the dialogue box, type <b>database_form</b> as the Project Name. 
+  Uncheck the box at the bottom for <b>Create Main Class</b>. Click the Finish 
+  button to create an empty project.</p>
+<p>In the Project area on the left locate your <b>database_form</b> project, and 
+  right click the entry. From the menu that appears select <b>New &gt; JFrame 
+  Form</b>:</p>
+<p align="center"><img src="images/databases/forms/new_jfame_form.gif" width="444" height="376" alt="Add a JFrame Form"></p>
+<p>When the dialogue box appears, type <b>Workers</b> for the Class name, and 
+  <b>Employees</b> as the package name. When you click Finish, you should see 
+  a blank form appear in the main NetBeans window.</p>
+<p>Add a Panel to your form. Then place four Text Fields on the panel. Delete 
+  the default text for the Text Fields, leaving them all blank. Change the default 
+  variable names for the Text Fields to the following:</p>
+<p align="center"><b>textID<br>
+  textFirstName<br>
+  textLastName<br>
+  textJobTitle</b></p>
+<p>Add a label to your panel. Position it just to the left of the job title Text 
+  Field. Enter &quot;Job Title&quot; as the text for the label. Arrange the Text 
+  Fields and the Label so that your form looks something like this:</p>
+<p align="center"><img src="images/databases/forms/form_design1.gif" width="408" height="234" alt="A Java form with four text fields"></p>
+<p>Now have a look at the Inspector area to the left of NetBeans. (If you can't 
+  see it, click <b>Window &gt; Inspector</b> from the NetBeans menu.) It should 
+  match ours:</p>
+<p align="center"><img src="images/databases/forms/inspector.gif" width="285" height="205" alt="The Inspector window"></p>
+<p>What we want to do now is to have the first record from the database table 
+  appear in the text fields when the form first loads. To do that, we can call 
+  a method from the form's Constructor.</p>
+<p>First, though, we can add Client Driver JAR file to the project, just like 
+  last time. This will prevent any &quot;Driver Not Found&quot; errors. So, in 
+  the Projects area, right click the Libraries entry for your project. From the 
+  menu that appears, select Add JAR/Folder. When the dialogue box appears, locate 
+  the derbyclient.jar file. Then click Open to add it to your project.</p>
+<p>In the main NetBeans window, click the Source button at the top to get to your 
+  code. Now add the following import statements near the top:</p>
+<p class="TextIndent2"><b>import java.sql.Connection;<br>
+  import java.sql.DriverManager;<br>
+  import java.sql.SQLException;<br>
+  import java.sql.Statement;<br>
+  import java.sql.ResultSet;<br>
+  import javax.swing.JOptionPane;</b></p>
+<p>You've met all these before, the first five from the previous section. The 
+  last one, JOptionPane, is so that we can display error messages.</p>
+<p>Inside of the Class, add the following variable declarations:</p>
+<p class="TextIndent2"><b>Connection con;<br>
+  Statement stmt;<br>
+  ResultSet rs;</b></p>
+<p>Just below the Workers Constructor, add the following method:</p>
+<p class="TextIndent2"><b>public void DoConnect( ) {</b></p>
+<p class="TextIndent2"><b>}</b></p>
+<p>Now add a call to this method from the Constructor:</p>
+<p><span class="TextIndent2">public Workers() {</span><br>
+  <span class="TextIndent3">initComponents();</span><br>
+  <span class="TextIndent3">DoConnect();</span><br>
+  <span class="TextIndent2">}</span></p>
+<p>Your code window will then look like this: (Don't worry if you have underlines 
+  for the import statements. Unless they're red underlines. In which case, you 
+  may have made a typing error.)</p>
+<p align="center"><img src="images/databases/forms/code_1.gif" width="365" height="378" border="1" alt="Java code with a constructor and a method"></p>
+<p>What we've done here is to set up a Connection object called <b>con</b>, a 
+  Statement object called <b>stmt</b>, and a ResultSet object called <b>rs</b>. 
+  We've set them up at the top because our buttons will need access to these objects.</p>
+<p>When the form loads, our <b>DoConnect</b> method will be called. We can add 
+  code here to connect to the database, and display the first record in the text 
+  fields.</p>
+<p>The code to add for the DoConnect method is almost identical to the code you 
+  wrote in the previous section. It's this:</p>
+<p align="center"><img src="images/databases/forms/code_DoConnect.gif" width="504" height="502" alt="A Java method to connect to a database" border="1"></p>
+<p>One line that you may not have met is this one:</p>
+<p class="TextIndent2"><b>String id = Integer.toString( id_col );</b></p>
+<p>Because the ID column is an Integer, we need to convert it to a String for 
+  the <b>setText</b> method of the Text Field. We need to do this because Text 
+  Field's don't accept Integer values directly - you need to convert them to text.</p>
+<p>All the other lines in the code should be familiar to you by now. Study the 
+  code to make sure you know what's happening. Then add it your own DoConnect 
+  method.</p>
+<p>You can run your programme now. First, though, make sure to start your Java 
+  DB server from the Services window.</p>
+<p>When you run your programme, you should see the first record displayed in the 
+  Text Fields:</p>
+<p align="center"><img src="images/databases/forms/form_design2.gif" width="414" height="260" alt="The first record is displayed"></p>
+<p>Now that we have the first record displayed, we can add some buttons to scroll 
+  through the rest of the table data. We'll do that in the next lesson.</p>
+<P>&nbsp;</P>
+ <div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="connecting_to_a_database_table.html">Connect to a Table</a></li>
+                            <li><a href="database_scrolling_buttons.html">Database Scrolling Buttons</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

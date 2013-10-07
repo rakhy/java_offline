@@ -1,0 +1,169 @@
+
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+<p>Now that you have connected to the database, the next step is to access the 
+  table in your database. For this, you need to execute a SQL Statement, and then 
+  manipulate all the rows and columns that were returned.</p>
+<p>To execute a SQL statement on your table, you set up a Statement object. So 
+  add this import line to the top of your code:</p>
+<p class="TextIndent2"><b>import java.sql.Statement;</b></p>
+<p>In the <b>try</b> part of the <b>try &#133; catch</b> block add the following 
+  line (add it just below your Connection line):</p>
+<p class="TextIndent2"><b>Statement stmt = con.createStatement( );</b></p>
+<p>Here, we're creating a Statement object called <b>stmt</b>. The Statement object 
+  needs a Connection object, with the <b>createStatment</b> method. </p>
+<p>We also need a SQL Statement for the Statement object to execute. So add this 
+  line to your code:</p>
+<p class="TextIndent2"><b>String SQL = &quot;SELECT * FROM Workers&quot;;</b></p>
+<p>The above statement selects all the records from the database table called 
+  <b>Workers</b>.</p>
+<p>We can pass this SQL query to a method of the Statement object called <b>executeQuery</b>. 
+  The Statement object will then go to work gathering all the records that match 
+  our query.</p>
+<p>However, the <b>executeQuery</b> method returns all the records in something 
+  called a <b>ResultSet</b>. Before we explain what these are, add the following 
+  import line to the top of your code:</p>
+<p class="TextIndent2"><b>import java.sql.ResultSet;</b></p>
+<p>Now add this line just below your SQL String line:</p>
+<p class="TextIndent2"><b>ResultSet rs = stmt.executeQuery( SQL );</b></p>
+<p>So our ResultSet object is called <b>rs</b>. This will hold all the records 
+  from the database table. Before we go any further, though, here's an explanation 
+  of what ResultSets are.</p>
+<p>&nbsp;</p>
+<h3>ResultSets in Java</h3>
+<p>A ResultSet is a way to store and manipulate the records returned from a SQL 
+  query. ResultSets come in three different types. The type you use depends on 
+  what you want to do with the data: </p>
+<ol>
+  <li>Do you just want to move forward through the records, from beginning to 
+    end?</li>
+  <li>Do you want to move forward AND backward through the records, as well as 
+    detecting any changes made to the records? <br>
+    3) Do you want to move forward AND backward through the records, but are not 
+    bothered about any changes made to the records?</li>
+  <li>Do you want to move forward AND backward through the records, but are not 
+    bothered about any changes made to the records?</li>
+</ol>
+<p>Type number 1 on the list above is called a TYPE_FORWARD_ONLY ResultSet. Number 
+  2 on the list is a TYPE_SCROLL_SENSITIVE ResultSet. The third ResultSet option 
+  is called TYPE_SCROLL_INSENSITIVE. </p>
+<p>The ResultSet type goes between the round brackets of createStement:</p>
+<p class="TextIndent2"><b>Statement stmt = con.createStatement( );</b></p>
+<p>Because we've left the round brackets empty, we'll get the default RecordSet, 
+  which is TYPE_FORWARD_ONLY. In the next section, we'll use one of the other 
+  types. But you use them like this:</p>
+<p class="TextIndent2"><font size="2"><b>Statement stmt = con.createStatement( 
+  RecordSet.TYPE_SCROLL_SENSITIVE );</b></font></p>
+<p>So you first type the word RecordSet. After a dot, you add the RecordSet type 
+  you want to use.</p>
+<p>However, it doesn't end there. If you want to use TYPE_SCROLL_SENSITIVE or 
+  TYPE_SCROLL_INSENSITIVE you also need to specify whether the ResultSet is Read 
+  Only or whether it is Updatable. You do this with two built-in constants: CONCUR_READ_ONLY 
+  and CONCUR_UPDATABLE. Again, these come after the word RecordSet:</p>
+<p class="TextIndent2">ResultSet.<b>CONCUR_READ_ONLY</b><br>
+  ResultSet.<b>CONCUR_UPDATABLE</b></p>
+<p>This leads to a rather long line of code:</p>
+<p class="TextIndent2"><font size="2"><b>Statement stmt = con.createStatement( 
+  RecordSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);</b></font></p>
+<p>One more thing to get used to with ResultSets is something called a <b>Cursor</b>. 
+  A Cursor is really just a pointer to a table row. When you first load the records 
+  into a ResultSet, the Cursor is pointing to just before the first row in the 
+  table. You then use methods to manipulate the Cursor. But the idea is to identify 
+  a particular row in your table.</p>
+<p>&nbsp;</p>
+<h3>Using a ResultSet</h3>
+<p>Once you have all the records in a Results set, there are methods you can use 
+  to manipulate your records. Here are the methods you'll use most often:</p>
+<p align="center"><img src="images/databases/resultset_options.gif" width="459" height="300" alt="ResultSet options"></p>
+<p>The ResultSet also has methods you can use to identify a particular column 
+  (field) in a row. You can do so either by using the name of the column, or by 
+  using its index number. For our Workers table we set up four columns. They had 
+  the following names: ID, First_Name, Last_Name, and Job_Title. The index numbers 
+  are therefore 1, 2, 3, 4.</p>
+<p>We set up the ID column to hold Integer values. The method you use to get at 
+  integer values in a column is getInt:</p>
+<p class="TextIndent2"><b>int id_col = rs.getInt(&quot;ID&quot;);</b></p>
+<p>Here, we've set up an integer variable called <b>id_col</b>. We then use the 
+  <b>getInt</b> method of our ResultSet object, which is called <b>rs</b>. In 
+  between the round brackets, we have the name of the column. We could use the 
+  Index number instead:</p>
+<p class="TextIndent2"><b>int id_col = rs.getInt(1);</b></p>
+<p>Notice that the Index number doesn't have quote marks, but the name does.</p>
+<p>For the other three columns in our database table, we set them up to hold Strings. 
+  We, therefore, need the getString method:</p>
+<p class="TextIndent2"><b>String first_name = rs.getString(&quot;First_Name&quot;);</b></p>
+<p>Or we could use the Index number:</p>
+<p class="TextIndent2"><b>String first_name = rs.getString(2);</b></p>
+<p>Because the ResultSet Cursor is pointing to just before the first record when 
+  the data is loaded, we need to use the next method to move to the first row. 
+  The following code will get the first record from the table:</p>
+<p class="TextIndent2"><b>rs.next( );<br>
+  int id_col = rs.getInt(&quot;ID&quot;);<br>
+  String first_name = rs.getString(&quot;First_Name&quot;);<br>
+  String last_name = rs.getString(&quot;Last_Name&quot;);<br>
+  String job = rs.getString(&quot;Job_Title&quot;);</b></p>
+<p>Notice that <b>rs.next</b> comes first in this code. This will move the Cursor 
+  to the first record in the table.</p>
+<p>You can add a print line to your code to display the record in the Output window:</p>
+<p class="TextIndent2"><b>System.out.println( id_col + &quot; &quot; + first_name 
+  + &quot; &quot; + last_name + &quot; &quot; + job );</b></p>
+<p>Here's what your code should look like now (we've adapted the print line because 
+  it's a bit too long):</p>
+<p align="center"><img src="images/databases/code_record1.gif" width="505" height="365" border="1" alt="Java code to connect to a database table"></p>
+<p>If you want to go through all the records in the table, you can use a loop. 
+  Because the next method returns true or false, you can use it as the condition 
+  for a while loop:</p>
+<p class="TextIndent2"><b>while ( rs.next( ) ) {</b></p>
+<p class="TextIndent2"><b>}</b></p>
+<p>In between the round brackets of <b>while</b> we have <b>rs.next</b>. This 
+  will be true as long as the Cursor hasn't gone past the last record in the table. 
+  If it has, rs.next will return a value of false, and the while loop will end. 
+  Using rs.next like this will also move the Cursor along one record at a time. 
+  Here's the same code as above, but using a while loop instead. Change your code 
+  to match:</p>
+<p align="center"><img src="images/databases/code_record_loop.gif" width="511" height="412" border="1" alt="Loping through all the records in the ResultSet"></p>
+<p>When you run the above code, the Output window should display the following:</p>
+<p align="center"><img src="images/databases/code_record_loop_output.gif" width="290" height="103" alt="The output of the Java code" border="1"></p>
+<p>Now that you have an idea of how to connect to a database table and display 
+  records we'll move on and write a more complex programme using forms and buttons 
+  to scroll through the records.</p>
+<P>&nbsp;</P>
+ <div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="connect_to_a_database_using_java_code.html">Connect to Database</a></li>
+                            <li><a href="databases_and_java_forms.html">Databases and Java Forms</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

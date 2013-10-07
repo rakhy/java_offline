@@ -1,0 +1,114 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">	
+<P>In the normal flow of a programme, when the Java Virtual Machine is running 
+  your code, one method after another will be executed, starting with the main 
+  method. When a method has its turn at the head of the programming queue it said 
+  be on top of the <b>stack</b>. After the whole of the method has been executed, 
+  it is taken off the stack to be replaced by the next method in the queue. To 
+  illustrate the principal, change <a href="java_error_handling.html">your programme 
+  code</a> to this:</P>
+<p align="center"><img src="images/errors/stack_methods_A.gif" width="370" height="327" border="1" alt="Sample Java code examining the stack"></p>
+<p>We now have a Main method and two others: a method called <b>m1</b>, and a 
+  method called <b>m2</b>. When the programme first starts, the Main method is 
+  on top of the stack. However, inside of the Main method we have a call to the 
+  m1 method. When this method is called it jumps to the top of the stack. The 
+  m1 method in turn calls the m2 method. When m2 is called, it jumps to the top 
+  of the stack, pushing m1 aside temporarily. After m2 finishes, control is given 
+  back to m1. When m1 is finished, it gets pushed off the top of the stack, and 
+  control is handed back to the Main method.</p>
+<p>Run your programme and watch the Output window to see what gets printed out:</p>
+<p align="center"><img src="images/errors/stack_methods_output.gif" width="170" height="80" border="1" alt="Programme output"></p>
+<p>If something goes wrong in method m2, the JVM will look for any error handling, 
+  like a <b>try &#133; catch</b> block. If there is no error handling, the Exception 
+  will get handed to m1 to see if it is dealing with the error. We don't have 
+  any error handling in m1 so again the Exception gets passed up the stack, this 
+  time to the Main method. If the Main method doesn't deal with the Exception 
+  then you'll get a strange error message printed to the Output window. As an 
+  example, adapt your <b>m2</b> method to this:</p>
+<p class="TextIndent2"><b>static void m2( ) {</b></p>
+<p> <b><span class="TextIndent3">int x = 10;</span><br>
+  <span class="TextIndent3">int y = 0;</span><br>
+  <span class="TextIndent3">double z = x / y;</span></b></p>
+<p> <b><span class="TextIndent3">System.out.println( z );</span><br>
+  <span class="TextIndent3">System.out.println(&quot;Method Two - m2&quot;);</span></b></p>
+<p class="TextIndent2"><b>}</b></p>
+<p>The method contains the divide by zero error again. Your code should now look 
+  like ours below:</p>
+<p align="center"><img src="images/errors/stack_methods_C.gif" width="371" height="402" border="1" alt=" A divide by zero error in Java"></p>
+<p>Run the programme and watch what happens in the Output window:</p>
+<p align="center"><img src="images/errors/stack_trace_output.gif" width="481" height="120" border="1" alt="A Java exception message"></p>
+<p>What you're looking at is something called a stack trace. The three lines in 
+  blue underline refer to your methods, and where they can be found: </p>
+<p class="TextIndent2"><b>package_name.class_name.method_name</b></p>
+<p>The one at the top is where the error first occurred, in <b>m2</b>. Java was 
+  looking for this to be handled by an <b>ArithmeticException</b>, which is where 
+  divide by zero errors should be caught. There was no error handling in m2, m1, 
+  or main. So the programme outputted to the default error handler.</p>
+<p>Change you m1 method to this:</p>
+<p> <span class="TextIndent2"><b>try {</b></span><b><br>
+  <span class="TextIndent3">System.out.println(&quot;Method One - m1&quot;);</span><br>
+  <span class="TextIndent3">m2( );</span><br>
+  <span class="TextIndent2">}</span><br>
+  <span class="TextIndent2">catch (ArithmeticException err) {</span><br>
+  <span class="TextIndent3">System.out.println( err.getMessage( ) );</span><br>
+  <span class="TextIndent2">}</span></b></p>
+<p>We've now wrapped up the method called m2 in a <b>try</b> block. In the <b>catch</b> 
+  part, we've used the Exception type that was reported in the stack trace - ArithmeticException.</p>
+<p>Run the code again, and the Output window will display the following:<br>
+</p>
+<p align="center"><img src="images/errors/stack_trace_output2.gif" width="164" height="73" border="1" alt="Java has handled the error"></p>
+<p>Notice that the error message is printed out: &quot;/ by zero&quot;. The whole 
+  of the m2 method was not executed, but was stopped where the error occurred. 
+  Control was then passed back to m1. Because there was a catch block to handle 
+  the error, the JVM saw no need to a default error handler, but printed out the 
+  message between the curly brackets of catch.</p>
+<p>The programme itself was not stopped, however. Control was passed back to the 
+  Main method, where the m1 method was called. The final line in the Main method, 
+  printing out &quot;End Main method&quot;, was executed. This has important implications. 
+  Suppose you needed the value from m1, because you were going to do something 
+  with it in Main. The value wouldn't be there, and your programme may not behave 
+  as expected.</p>
+<p>But if you see a stack trace in the Output window, just remember that first 
+  line is where the problem occurred; the rest of the lines, if any, are where 
+  the Exception was handed up the stack, usually finishing at the main method.</p>
+<p>In the next part, we'll look at Logic Errors.</p>
+
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="java_error_handling.html">Errors and Exceptions</a></li>
+                            <li><a href="logic_errors.html">Logic Errors</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+</p>You can compare one string to another. (When comparing, Java will use the hexadecimal 
+  values rather than the letters themselves.) For example, if you wanted to compare 
+  the word &quot;Ape&quot; with the word &quot;App&quot; to see which should come 
+  first, you can use an inbuilt string method called <b>compareTo</b>. Let's see 
+  how it works.<p></P>
+<p>You don't need to start a new project for this: simply comment out (or delete) 
+  <a href="upper_lower_case.html">the code you already have</a>. Now add the following 
+  code:</p>
+<p align="center"><img src="images/strings/compareTo.gif" width="488" height="454" border="1" alt="Java code showing an exmple of compareTo"></p>
+<p>We've set up two string variables to contain the words &quot;Ape&quot; and 
+  &quot;App&quot;. The compareTo method is then this line in the code above:</p>
+<p class="TextIndent2"><b>result = Word1.compareTo( Word2 );</b></p>
+<p>The <b>compareTo</b> method returns a value. The value that is returned will 
+  be greater than 0, less than 0, or have a value of zero. If Word1 comes before 
+  Word2, then the value that is returned will be less than 0. If Word1 comes after 
+  Word2 then the value returned will be greater than 0. If the two words are identical 
+  then a value of 0 will be returned. </p>
+<p>So you need to assign the value that compareTo returns to a variable. We're 
+  placing the value in an integer variable called result. The IF Statements in 
+  the code simply tests to see what is in the result variable</p>
+<p>However, when you compare one string of text with another, Java compares the 
+  underlying hexadecimals values, rather than the actual letters. Because uppercase 
+  letters have a lower hexadecimal value than lowercase ones, an uppercase letter 
+  &quot;A&quot; in &quot;App&quot; will come before a lowercase letter &quot;a&quot; 
+  in &quot;ape&quot;. Try it for yourself. Change &quot;Ape&quot; to &quot;ape&quot; 
+  in your code. The Output will read &quot;Word1 is more than Word2&quot;, meaning 
+  that Java will place the word &quot;ape&quot; after the word &quot;app&quot; 
+  alphabetically. </p>
+<p>To solve the problem, there's a related method called compareToIgnoreCase. 
+  As its name suggest, lowercase and uppercase letter are ignored. Use this and 
+  &quot;ape will come before &quot;App&quot; alphabetically.<br>
+</p>
+<p>Next up, we'll look at another useful String method - indexOf.</p>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="upper_lower_case.html">UpperCase and LowerCase</a></li>
+                            <li><a href="indexOf.html">indexOf</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

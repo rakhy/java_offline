@@ -1,0 +1,143 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+                <P>Another way to control the flow of your programmes is with something called 
+                    a switch statement. A switch statement gives you the option to test for a range 
+                    of values for your variables. They can be used instead of long, complex<b> if 
+                        &#133; else if</b> statements. The structure of the switch statement is this:</P>
+                <p><b>switch ( </b>variable_to_test<b> ) {<br>
+                        <span class="TextIndent2">case value: </span><br>
+                        <span class="TextIndent3">code_here;</span><br>
+                        <span class="TextIndent3">break;</span><br>
+                        <span class="TextIndent2">case value:</span> <br>
+                        <span class="TextIndent3">code_here;</span><br>
+                        <span class="TextIndent3">break;</span><br>
+                        <span class="TextIndent2">default:</span><br>
+                        <span class="TextIndent3">values_not_caught_above;</span></b></p>
+                <p><b>}</b></p>
+                <p>So you start with the word <b>switch</b>, followed by a pair of round brackets. 
+                    The variable you want to check goes between the round brackets of switch. You 
+                    then have a pair of curly brackets. The other parts of the switch statement 
+                    all go between the two curly brackets. For every value that you want to check, 
+                    you need the word <b>case</b>. You then have the value you want to check for:</p>
+                <p class="TextIndent3"><b>case</b> value: </p>
+                <p>After case value comes a colon. You then put what you want to happen if the 
+                    value matches. This is your code that you want executed. The keyword <b>break</b> 
+                    is needed to break out of each case of the switch statement.</p>
+                <p>The default value at the end is optional. It can be included if there are other 
+                    values that can be held in your variable but that you haven't checked for elsewhere 
+                    in the switch statement.</p>
+                <p>If all of that is confusing, here's some code to try out. You can either start 
+                    a new project for this, or just comment out the code you have. A quick way to 
+                    comment out code in NetBeans is from the toolbar at the top. First, highlight 
+                    the code you want to comment out. Then click the comment icon:</p>
+                <p align="center"><img src="images/started/comment_icon.gif" width="130" height="66" border="1" alt="The Java comment icon on the NetBeans toolbar"></p>
+                <p>But here's the code:</p>
+                <p align="center"><img src="images/con_logic/switch_statement.gif" width="459" height="348" border="1" alt="Code demonstrating a Java switch statement"></p>
+                <p>The first thing the code does is to set a value to test for. Again, we've set 
+                    up an integer variable and called it <b>user</b>. We've set the value to 18. 
+                    The switch statement will check the user variable and see what's in it. It will 
+                    then go through each of the case statements in turn. When it finds one that 
+                    matches, it will stop and execute the code for that case. It will then break 
+                    out of the switch statement.</p>
+                <p>Try the programme out. Enter various values for the user variable and see what 
+                    happens. </p>
+                <p>Sadly, you can't test for a range of values after case, just the one value. 
+                    So you can't do this:</p>
+                <p class="TextIndent2"><b>case (user &lt;= 18):</b></p>
+                <p>But you can do this:</p>
+                <p class="TextIndent2"><b>case 1: case 2: case 3: case 4:</b></p>
+                <p>So the above line tests for a range of values, from 1 to 4. But you have to 
+                    &quot;spell out&quot; each value. (Notice where all the case and colons are.)</p>
+                <p>To end this section on conditional logic, try these exercises.<br>
+                </p>
+                <p>&nbsp;</p>
+                <p><b>Exercise C</b><br>
+                    Write a programme that accepts user input from the console. The programme should 
+                    take a number and then test for the following age ranges: 0 to 10, 11 to 20, 
+                    21 to 30, 30 and over. Display a message in the Output window in the following 
+                    format:</p>
+                <p class="TextIndent2"><b>user_age + &quot; is between 21 and 30&quot;</b></p>
+                <p>So if the user enters 27 as the age, the Output window should be this:</p>
+                <p align="center"><img src="images/con_logic/age_exercise_output.gif" width="425" height="137" border="1" alt="Output of the Java exercise"></p>
+                <p>If the user is 30 or over, you can just display the following message:</p>
+                <p class="TextIndent2"><b>&quot;You are 30 or over&quot;</b></p>
+				
+				<p align="right"><a href = "java_answers_c.html">Answer to Exercise C</a></p
+                ><p>&nbsp;</p>
+                <p><b>Help for this exercise</b></p>
+                <p>To get string values from the user, you did this:</p>
+                <p class="TextIndent2"><b>String age = user_input.next( );</b></p>
+                <p>But the <b>next</b>( ) method is used for strings. The age you are getting 
+                    from the user has to be an integer, so you can't use next( ). There is, however, 
+                    a similar method you can use: <b>nextInt</b>( ). </p>
+                <p>&nbsp;</p>
+                <p><b>Exercise D</b><br>
+                    If you want to check if one String is the same as another, you can use a Method 
+                    called <b>equals</b>. </p>
+                <p class="TextIndent2"><b>String user_name = &quot;Bill&quot;;</b></p>
+                <p><b><span class="TextIndent2">if ( </span></b><span class="TextIndent2">user_name.<b>equals</b>( 
+                        &quot;Bill&quot; )</span><b><span class="TextIndent2"> ) {</span><br>
+                        <span class="TextIndent3">//DO SOMETHING HERE</span><br>
+                        <span class="TextIndent2">} </span></b></p>
+                <p>In the code above, we've set up a String variable and called it user_name. 
+                    We've then assigned a value of &quot;Bill&quot; to it. In between the round 
+                    brackets of IF we have the variable name again, followed by a dot. After the 
+                    dot comes the word &quot;equals&quot;. In between another pair of round brackets 
+                    you type the string you're trying to test for.</p>
+                <p>NOTE: When checking if one string is the same as another, they have to match 
+                    exactly. So &quot;Bill&quot; is different from &quot;bill&quot;. The first has 
+                    an uppercase letter &quot;B&quot; and the second has a lowercase &quot;b&quot;.</p>
+                <p><br>
+                    For this exercise, write a programme that asks a user to choose between four 
+                    colours: black, white, red, or blue. Use IF &#133; ELSE IF statements to display 
+                    one of the following messages, depending on which colour was chosen:</p>
+                <p><span class="TextIndent2"><b>BLACK</b> &quot;You must be a Goth!&quot;</span><br>
+                    <span class="TextIndent2"><b>WHITE</b> &quot;You are a very pure person&quot;</span><br>
+                    <span class="TextIndent2"><b>RED</b> &quot;You are fun and outgoing&quot;</span><br>
+                    <span class="TextIndent2"><b>BLUE</b> &quot;You're not a Chelsea fan, are you?&quot;</span></p>
+                <p>When your programme ends, the Output window should look like something like 
+                    this:</p>
+                <p align="center"><img src="images/con_logic/colour_exercise_output.gif" width="425" height="137" border="1" alt="Output window showing results of Java  exercise"></p>
+                <p align="right"><a href = "java_answers_d.html">Answer to Exercise D</a></p
+                ><p>&nbsp;</p>
+                <p>OK, let's move on and have a look at loops. We'll be upping the pace a bit 
+                    in this next section, so hang on to your hats!</p>
+                <div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="boolean_values.html">Boolean Values</a></li>
+                            <li><a href="java_for_loops.html">Java For Loops</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

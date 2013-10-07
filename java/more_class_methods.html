@@ -1,0 +1,111 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">	
+<p>So we now have a student name and an exam name. Both are stored in the field 
+  names in the StudentResults class. We can now add an exam score.</p>
+<p>Add the following new method to your class, just after your examName method:</p>
+<p align="center"><img src="images/classes/sr_examScore.gif" width="339" height="100" border="1" alt="A new method added to the java class"></p>
+<p>This new method has the name <b>examScore</b>, with an int variable called 
+  <b>aScore</b> between its round brackets. It's set to return a String value. 
+  The method itself just combines the score with the string &quot; out of 50&quot;. 
+  So if the value in aScore is 30, the text &quot;30 out of 50&quot; will be stored 
+  in the Exam_Score field.</p>
+<p>In your ExamDetails class, add the following line:</p>
+<p class="TextIndent2"><b>String score = aStudent.examScore(30);</b></p>
+<p>So we call the new <b>examScore</b> method and hand it a value of 30. The value 
+  in the <b>Exam_Score</b> field is returned, and then stored in a string variable 
+  that we've called score.</p>
+<p>Add a new print line method so that your code looks like ours below:</p>
+<p align="center"><img src="images/classes/exams_main_examScore.gif" width="453" height="274" border="1" alt="What your java Main method should look like now"></p>
+<p>When the programme is run, the Output window now looks like this:</p>
+<p align="center"><img src="images/classes/output_exam_score.gif" width="309" height="110" border="1" alt="Output window showing the results of the code"></p>
+<p>So we have the student name, the exam name, and the score out of 50. We can 
+  now add a grade to the output.</p>
+<p>We'll use a single letter for the grade: A, B, C, D, or E. If the students 
+  gets 41 or over, we'll an award an A; if the score is between 31 and 40, the 
+  grade will be B; for a score of 21 to 30 a C grade will be awarded; a D grade 
+  is between 11 and 20; and an E is for scores between 0 and 10.</p>
+<p>Add the following method to calculate the above grades (add it to your StudentResults 
+  class):</p>
+<p align="center"><img src="images/classes/sr_getGrade.gif" width="382" height="391" border="1" alt="A new java method to the exam grade"></p>
+<p>Notice that this method is <b>private</b>. Just like field variables, making 
+  a method private means it can only be seen inside of this class. It can't be 
+  seen by the ExamDetails class.</p>
+<p>To get the grade, we'll set up another method inside of the StudentResults 
+  class. We'll use this to get the grade. Add the following method just above 
+  the <b>getGrade</b> method (though you can add it below, if you prefer: it doesn't 
+  make any difference to Java!):</p>
+<p class="TextIndent2"><b>String examGrade(int aScore) {</b></p>
+<p><b><span class="TextIndent3">Exam_Grade = this.getGrade( aScore) ;</span><br>
+  <span class="TextIndent3">return Exam_Grade;</span><br>
+  <span class="TextIndent2">}</span></b></p>
+<p>This is the method we'll call from the ExamDetails class, rather than the getGrade 
+  method. The name of this new method is <b>examGrade</b>, and again we're passing 
+  in the student's score. Look at this line, though:</p>
+<p class="TextIndent2"><b>Exam_Grade = this.getGrade( aScore );</b></p>
+<p>The getGrade method is being called, here, and we're passing it the score that 
+  was handed over. Calling one method from another is standard practice, and it 
+  allows you to simplify your code. The alternative is to have very long methods 
+  that are hard to read. </p>
+<p>Another thing to notice in the line above is the Java keyword <b>this</b>. 
+  The <b>this</b> keyword means &quot;this class&quot;, rather than another class 
+  that may have the same method name. It avoids any confusion. It's strictly not 
+  necessary, and we could have left it out. The method call would still work without 
+  it:</p>
+<p class="TextIndent2"><b>Exam_Grade = getGrade( aScore );</b></p>
+<p>The end result, though, is still the same: we're storing something in the Exam_Grade 
+  field variable, and that something will be the text &quot;Grade is&quot; plus 
+  a grade letter.</p>
+<p>Add the following line to your ExamDetails class, to test out your new methods:</p>
+<p class="TextIndent2"><b>String grade = aStudent.examGrade(30);</b></p>
+<p>This line hands a value of 30 over to the examGrade method. The value in the 
+  Exam_Grade field variable is then returned, and stored in a variable called 
+  grade.</p>
+<p>With a print line, your ExamDetails class should look like this:</p>
+<p align="center"><img src="images/classes/exams_main_examGrade.gif" width="457" height="313" border="1" alt="Getting the exam grade"></p>
+<p>Run your programme to see the Output window:</p>
+<p align="center"><img src="images/classes/sr_examGrade.gif" width="322" height="124" border="1" alt="Output window"></p>
+<p>If your programme is not working properly, here's the full code for the <b>StudentResults</b> 
+  class:</p>
+<p align="center"><img src="images/classes/fullcode_A.gif" width="425" height="760" border="1" alt="Full Java class code A"></p>
+<p align="center"><img src="images/classes/fullcode_B.gif" width="425" height="619" border="1" alt="Full Java class code  B"></p>
+<p>In the next lesson, you'll learn about Inheritance.</p>
+<P>&nbsp;</P>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="accessing_class_variables.html">Class Variables</a></li>
+                            <li><a href="java_inheritance.html">Inheritance in Java</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

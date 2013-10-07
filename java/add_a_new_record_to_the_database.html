@@ -1,0 +1,153 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+</span>We have three buttons that refer to new records: New Record, Save New Record, 
+  and Cancel New Record. The New Record button will only clear the Text Fields, 
+  and ready them for new data to be entered. We can also disable some other buttons, 
+  including the New Record button. Another thing we can do is to make a note of 
+  which record is currently loaded. If a user changes his or her mind, we can 
+  enable all the buttons again by clicking the Cancel button. Clicking the Save 
+  New Record button will do the real work of saving the data to the database.</p>
+<p>If that's all a little confusing, try the following. Click on your Save New 
+  Record button to select it. In the Properties area on the right, locate the 
+  Enabled property:</p>
+<p align="center"><img src="images/databases/forms/btnSave_Properties.gif" width="295" height="338" alt="The Enabled property of a Java Button "></p>
+<p>Uncheck the box to the right of enabled. The Save New Record will be disabled. 
+  Do the same for the Cancel New Record button. The Cancel New Record will be 
+  disabled. When your form loads, it will look like this:</p>
+<p align="center"><img src="images/databases/forms/form_newRecordC.gif" width="420" height="368" alt="Two Java buttons disabled"></p>
+<p>Even if you had code for these two buttons, nothing would happen if you clicked 
+  on either of them.</p>
+<p>When the New Record button is clicked, we can disable the following buttons: 
+</p>
+<p align="center"><b>First<br>
+  Previous<br>
+  Next<br>
+  Last<br>
+  Update Record<br>
+  Delete Record<br>
+  New Record</b></p>
+<p>The Save and Cancel buttons, however, can be enabled. If the user clicks Cancel, 
+  we can switch the buttons back on again.</p>
+<p>Double click your New Record button to create a code stub. Add the following 
+  lines of code:</p>
+<p class="TextIndent2"><b>btnFirst.setEnabled( </b>false<b> );<br>
+  btnPrevious.setEnabled( </b>false<b> ) ;<br>
+  btnNext.setEnabled( </b>false<b> );<br>
+  btnLast.setEnabled( </b>false<b> );<br>
+  btnUpdateRecord.setEnabled( </b>false<b> );<br>
+  btnDelete.setEnabled( </b>false<b> );<br>
+  btnNewRecord.setEnabled( </b>false<b> );</b></p>
+<p class="TextIndent2"><b>btnSaveRecord.setEnabled( </b>true<b> );<br>
+  btnCancelNewRecord.setEnabled( </b>true<b> );</b><br>
+</p>
+<p>So seven of the buttons get turned off using the setEnabled property. Two of 
+  the buttons get turned on.</p>
+<p>We can do the reverse for the Cancel button. Switch back to Design view. Double 
+  click your Cancel New Record button to create a code stub. Add the following:</p>
+<p class="TextIndent2"><b>btnFirst.setEnabled( </b>true<b> );<br>
+  btnPrevious.setEnabled( </b>true<b> ) ;<br>
+  btnNext.setEnabled( </b>true<b> );<br>
+  btnLast.setEnabled( </b>true<b> );<br>
+  btnUpdateRecord.setEnabled( </b>true<b> );<br>
+  btnDelete.setEnabled( </b>true<b> );<br>
+  btnNewRecord.setEnabled( </b>true<b> );</b></p>
+<p class="TextIndent2"><b>btnSaveRecord.setEnabled( </b>false<b> );<br>
+  btnCancelNewRecord.setEnabled( </b>false<b> );</b></p>
+<p>Now run your programme and test it out. Click the New Record button and the 
+  form will look like this:</p>
+<p align="center"><img src="images/databases/forms/buttons_disabled2.gif" width="420" height="368" alt="New record button"></p>
+<p>Click the Cancel New Record button and the form will look like this:</p>
+<p align="center"><img src="images/databases/forms/form_newRecordC.gif" width="420" height="368" alt="Cancel button"></p>
+<p>Another thing we need to do is to record which row is currently loaded. In 
+  other words, which row number is currently loaded in the Text Fields. We need 
+  to do this because the Text Fields are going to be cleared. If the Cancel button 
+  is clicked, then we can reload the data that was erased.</p>
+<p>Add the following Integer variable to the top of your code, just below your 
+  Connection, Statement, and ResultSet lines:</p>
+<p class="TextIndent2"><b>int curRow = 0;</b></p>
+<p>The top of your code should look like this:</p>
+<p align="center"><img src="images/databases/forms/code_top.gif" width="359" height="191" alt="Add a new field to your Java code" border="1"></p>
+<p>Now go back to your New Record code.</p>
+<p>To get which row the Cursor is currently pointing to there is a method called 
+  getRow. This allows you to store the row number that the Cursor is currently 
+  on:</p>
+<p>&nbsp;</p>
+<p class="TextIndent2"><b>curRow = rs.getRow( );</b></p>
+<p>We'll use this row number in the Cancel New Record code.</p>
+<p>The only other thing we need to do for the New Record button is to clear the 
+  Text Fields. This is quite simple:</p>
+<p class="TextIndent2"><b>textFirstName.setText(&quot;&quot;);<br>
+  textLastName.setText(&quot;&quot;);<br>
+  textJobTitle.setText(&quot;&quot;);<br>
+  textID.setText(&quot;&quot;);</b></p>
+<p>So we're just setting the Text property to a blank string.</p>
+<p>Because we've used a method of the ResultSet, we need to wrap everything up 
+  in a <b>try &#133; catch</b> block. Here's what the code should look like for 
+  your New Record button:</p>
+<p align="center"><img src="images/databases/forms/btnNewRecord.gif" width="312" height="369" border="1" alt="Java code for the New Record button"></p>
+<p>For the Cancel button, we need to get the row that was previously loaded and 
+  put the data back in the Text Fields.</p>
+<p>To move the Cursor back to the row it was previously pointing to, we can use 
+  the absolute method:</p>
+<p class="TextIndent2"><b>rs.absolute( curRow );</b></p>
+<p>The absolute method moves the Cursor to a fixed position in the ResultSet. 
+  We want to move it the value that we stored in the variable curRow.</p>
+<p>Now that Cursor is pointing at the correct row, we can load the data into the 
+  Text Fields:</p>
+<p class="TextIndent2"><b>textFirstName.setText( rs.getString(&quot;First_Name&quot;) 
+  );<br>
+  textLastName.setText( rs.getString(&quot;Last_Name&quot;) );<br>
+  textJobTitle.setText( rs.getString(&quot;Job_Title&quot;) );<br>
+  textID.setText( Integer.toString( rs.getInt(&quot;ID&quot; )) );</b></p>
+<p>Wrapping it all in a <b>try &#133; catch</b> block gives us the following code:</p>
+<p align="center"><img src="images/databases/forms/btnCancelRecord.gif" width="383" height="344" border="1" alt="Code for the Cancel button"></p>
+<p>When you've finished adding the code for the New and Cancel buttons, run your 
+  programme and try it out. Before clicking the New Record button, the form will 
+  look like this:</p>
+<p align="center"><img src="images/databases/forms/form_newRecordA.gif" width="420" height="368" alt="The New Record button is highlighted"></p>
+<p>Click the New Record button to see the Text Fields cleared:</p>
+<p align="center"><img src="images/databases/forms/form_newRecordB.gif" width="420" height="368" alt="Text fields are cleared"></p>
+<p>Clicking the Cancel button will reload the data:</p>
+<p align="center"><img src="images/databases/forms/form_newRecordC.gif" width="420" height="368" alt="The data has been reloaded"></p>
+<p>Now that the New and Cancel buttons have been set up, we can go ahead and save 
+  any new data entered into the Text Fields.</p>
+<P>&nbsp;</P>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="update_a_database_record_in_java.html">Update</a></li>
+                            <li><a href="save_a_new_record.html">Save a New Record</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

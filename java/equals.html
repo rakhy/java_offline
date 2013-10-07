@@ -1,0 +1,68 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+<P>You can check two strings to see if they are the same. For this, use the equals 
+  method in Java. Here's some code:</P>
+<p align="center"><img src="images/strings/equals.gif" width="474" height="277" alt="Java code showing use of the equals method" border="1"></p>
+<p>In this code, we want to check if one email address is the same as another. 
+  The first two lines set up two string variables, one for each email address. 
+  The third line sets up a Boolean variable. That's because the equals method 
+  returns a value of true or false. The fourth line is where we use the method:</p>
+<p class="TextIndent2"><b>isMatch = email_address1.equals( email_address2 );</b></p>
+<p>In between the round brackets of the <b>equals</b> method, you place the string 
+  you're trying to check. The other string goes before the equals method. Java 
+  will then tell you (true or false) whether the two are the same. The IF statement 
+  checks which one it is.</p>
+<p>The equals method only compares objects, however. It's OK for strings, because 
+  they are objects. But you can't use the equals method to compare int variables. 
+  For example, this code would get you an error:</p>
+<p class="TextIndent2"><b>int num1 = 12;<br>
+  int num2 = 13<br>
+  Boolean isMatch = false;</b></p>
+<p class="TextIndent2"><b>isMatch = num1.equals(num2);</b></p>
+<p>The int variable is a primitive data type, and not an object. You can turn 
+  the primitive int data type into an object, though:</p>
+<p class="TextIndent2"><b>int num1 = 12;<br>
+  Integer num_1 = new Integer(num1);</b></p>
+<p>Here, the int variable called num1 is being turned into an Integer object. 
+  Note the use of the new keyword. In between the round brackets of Integer, you 
+  put the primitive int data type you want to convert to an object.</p>
+<p>Another useful Java string method is charAt. You'll meet this in the next lesson.</p>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="substring.html">Substring</a></li>
+                            <li><a href="charAt.html">The charAt Method</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

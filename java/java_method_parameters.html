@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+<P>You can pass values to your methods so that something can be done with this 
+  value. That value goes between the round brackets of the method. </P>
+<p>Switch back to <a href="java_method_calling.html">your MyMethods class</a>. 
+  Now add the second of our total methods:</p>
+<p align="center"><img src="images/methods/New_Class_total2.gif" width="395" height="376" border="1" alt="Java code showing a method with a  parameter"></p>
+<p>We now have two methods with the same name: <b>total</b>. The difference between 
+  the two is that this new one has a value between the round brackets. Java allows 
+  you to do this, and it is called <b>method overloading</b>. You can have as 
+  many methods with the same name as you want, with any return value. However, 
+  you can't have the same type of variables between the round brackets. So you 
+  can't have two total methods that return int values with both of them having 
+  int values between the round brackets. You can't do this, for example:</p>
+<p><span class="TextIndent2"><b>int total( int aNumber ) {</b></span><b><br>
+  <span class="TextIndent3">int a_Value = aNumber + 20;</span></b></p>
+<p><b><span class="TextIndent3">return a_Value;</span><br>
+  <span class="TextIndent2">}</span></b></p>
+<p><span class="TextIndent2"><b>int total( int aNumber ) {</b></span><b><br>
+  <span class="TextIndent3">int a_Value = aNumber + 50;</span></b></p>
+<p><b><span class="TextIndent3">return a_Value;</span><br>
+  <span class="TextIndent2">}</span></b></p>
+<p>Although the two methods do different things, they have the same method headers.</p>
+<p>Before you try out your new method, add some comments directly above the method:</p>
+<p align="center"><img src="images/methods/New_Class_total2_comments.gif" width="400" height="207" border="1" alt="Javadoc comments added to the  method"></p>
+<p>You'll see what the comments do in a moment. But the <b>param</b> in the comments 
+  above is short for <b>parameter</b>. A parameter is the technical term for the 
+  value between the round brackets of your method headers. Our parameter is called 
+  <b>aNumber</b>, and it has an integer values. Note the use of the @ character 
+  before <b>param</b> and <b>return</b>.</p>
+<p>All we're doing with the method itself is passing it an integer value and adding 
+  20 to this passed value. The return value is the total of the two.</p>
+<p>Now switch back to your code and add the following line:</p>
+<p class="TextIndent2"><b>int aVal2 = test1.total(30);</b></p>
+<p>As soon as you type the dot after your <b>test1</b> object, you'll see the 
+  popup list again. Your new total method will be on it. Click on the new method 
+  to highlight it and NetBeans will display the following:</p>
+<p align="center"><img src="images/methods/New_Class_total2_comments2.gif" width="439" height="484" border="1" alt="The Javadoc comments are displayed"></p>
+<p>The comments that we added are now displayed in the blue box underneath the 
+  list of methods. Anyone else coming across your method should be able to figure 
+  out what it does. The @param and @return lines from the comments are now filled 
+  out, and made bold.</p>
+<p>But once you have added the total2 method, type the number 30 between the round 
+  brackets. Then type a semi-colon to end the line. You main method should now 
+  look like this:</p>
+<p align="center"><img src="images/methods/New_Class_total2_call.gif" width="429" height="252" border="1" alt="A new method call from the main programme"></p>
+<p>The 30 between the round brackets of the new total method will be handed over 
+  and placed in the variable aNumber, which is in the round brackets of the method 
+  header:</p>
+<p align="center"><img src="images/methods/method_header_arrows2.gif" width="289" height="242" alt="Values being handed over to the method"></p>
+<p>Once you have handed the value over, the method can get to work.</p>
+<p>Add a print line to your code:</p>
+<p class="TextIndent2"><b>System.out.println( &quot;Method result2= &quot; + aVal2 
+  );</b></p>
+<p>Then run your programme. The Output window should display the following:</p>
+<p align="center"><img src="images/methods/output_int2.gif" width="314" height="112" border="1" alt="Output window for above code"></p>
+<p>So our new total method has added 30 to 20, and then returned the answer to 
+  the variable called aVal2.</p>
+<p>In the next lesson, you'll learn how to pass more than one value over to your 
+  methods.</p>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="java_method_calling.html">Method Calling</a></li>
+                            <li><a href="java_method_parameters_part2.html">Passing Multiple Values to Methods</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

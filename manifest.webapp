@@ -1,0 +1,13 @@
+{
+  "name": "Learn JAVA Offline",
+  "description": "Learn Java-Complete Offline Beginners Guide.",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/images/icon.png"
+  },
+  "developer": {
+    "name": "Rakhy(rakhy.in@gmail.com)",
+    "url": "http://www.rakhy.tk"
+  },
+  "default_locale": "en"
+}

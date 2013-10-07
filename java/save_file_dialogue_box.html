@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">	
+<p>If you want to display the Save File dialogue box instead of the Open File 
+  dialogue box then you can use your File Chooser again. This time, instead of 
+  showOpenDialog you use <b>showSaveDialog</b>:</p>
+<p class="TextIndent2"><b>int returnVal = db.showSaveDialog( this );</b></p>
+<p>Again, this is enough to display the dialogue box. You don't have to do anything 
+  else, though you can add a file filter, as well.</p>
+<p class="TextIndent2"><b>FileFilter ft = new FileNameExtensionFilter( &quot;Text 
+  Files&quot;, &quot;txt&quot; );<br>
+  db.addChoosableFileFilter( ft );</b></p>
+<p class="TextIndent2"><b>int returnVal = db.showSaveDialog(this);</b></p>
+<p>To write the file, add an import statement to the top of your code:</p>
+<p class="TextIndent2"><b>import textfiles.WriteFile;</b></p>
+<p>You can then create a new WriteFile object. Again, you can place the code inside 
+  of an IF Statement, along with a <b>try &#133; catch</b> block:</p>
+<p align="center"><img src="images/forms/fileChooser_code_save.gif" width="487" height="306" border="1" alt="Java code to save a text file"></p>
+<p>The last two lines in the code above get the data from the text area. This 
+  is then placed into a string variable called alltext. We then call the writeToFile 
+  method from our WriteFile class.</p>
+<p><br>
+  <b>Exercise</b><br>
+  Create a code stub for your <b>File &gt; Save</b> menu item. Add the above code 
+  to it. Run your programme and try it out. Type some new text into the text area. 
+  Then click <b>File &gt; Save</b> on your menu. When the &quot;Save File&quot; 
+  dialogue box appears, type a file name and then click Save. Check your file 
+  to see if it has indeed been created, and that it contains the text you wrote 
+  in the text area.</p>
+<p>&nbsp;</p>
+
+<p>And that's it for this introduction to forms and form objects. We'll move on. 
+  In the next section, we'll take a look at databases.</p>
+<P>&nbsp;</P>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="opening_files_part2.html">Opening Text Files</a></li>
+                            <li><a href="java_and_databases.html">Java and Databases</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

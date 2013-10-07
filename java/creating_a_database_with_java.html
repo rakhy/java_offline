@@ -1,0 +1,140 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+</p>Now that your server has been started, you can go ahead and create a database.<p></p>
+<p>To create a new database, right click on Java DB again. From the menu that 
+  appears, select <b>Create Database</b>:</p>
+<p align="center"><img src="images/databases/services_create_DB.gif" width="375" height="202" alt="Menu showing the Create Database item"></p>
+<p>When you click on Create Database, you'll see a dialogue box appear:</p>
+<p align="center"><img src="images/databases/Create_DB_Dialogue.gif" width="465" height="214" alt="The create database dialogue box"></p>
+<p>Type a name for your database in the first box. Call it <b>Employees</b>. Type 
+  any User Name and Password (something a bit harder to crack than ours below!):</p>
+<p align="center"><img src="images/databases/Create_DB_Dialogue2.gif" width="465" height="214" alt="Type a name, username and password for your Java DB Database"></p>
+<p>Click OK to create your database. It should then appear on the list:</p>
+<p align="center"><img src="images/databases/CreateDB_Employees.gif" width="375" height="202" alt="The database showing on the Services list"></p>
+<p>&nbsp;</p>
+<h3>Creating a Table in the Database</h3>
+<p>Now that the database has been created, you need to create a table in the database. 
+  To do so, right click on your database. From the menu that appears select <b>Connect</b>:</p>
+<p align="center"><img src="images/databases/CreateDB_Employees_Connect.gif" width="375" height="278" alt="Connect to the new database"></p>
+<p>When a connection is made, you'll see some default folders for Tables, Views, 
+  and Procedures (see further down if your screen is not like this):</p>
+<p align="center"><img src="images/databases/CreateDB_Employees_Connect2.gif" width="375" height="278" alt="Default folders have been created"></p>
+<p>To create a new table in your database, right click the <b>Tables</b> folder. 
+  From the menu that appears, select <b>Create Table</b>:</p>
+<p align="center"><img src="images/databases/Employees_Create_Table.gif" width="375" height="278" alt="The Create Table item"></p>
+<p>If you don't see just the three folders above, but have something like this 
+  instead:</p>
+<p align="center"><img src="images/databases/new_database/create_table.gif" width="390" height="459"></p>
+<p>Click the APP entry, and then right-click on Tables.</p>
+<p>When you click on Create Table, a dialogue box appears. Either this one: </p>
+<p align="center"><img src="images/databases/Table_DB.gif" width="510" height="291" alt="The Create Table dialogue box"></p>
+<p>Or this one:</p>
+<p align="center"><img src="images/databases/new_database/create_table_2.gif" width="539" height="334"></p>
+<p>From here, you not only type a name for your table, but you also set up the 
+  columns for the table.</p>
+<p>In the Table Name at the top, delete the default name of Untitled. Type a new 
+  name for your table. Call it <b>Workers</b>. You'll then have a table called 
+  Workers, which is in the <b>Employees</b> database.</p>
+<p>But you can't click OK just yet as the table has no columns in it. We want 
+  to create columns with the following names:</p>
+<p align="center"><b>ID<br>
+  First_Name<br>
+  Last_Name<br>
+  Job_Title</b></p>
+<p>The ID column will hold a unique identifying number. This will identify a row 
+  in the table. A column with unique data in it is known as a <b>Primary Ke</b>y. 
+  Because it's the Primary Key, the column has to hold data: It can't hold a null 
+  value. (A null value just means there's no information there.)</p>
+<p>If your Create Table dialogue box is like the first one, then put a tick in 
+  the box for <b>Key</b>. When you tick the Key box, check marks will also appear 
+  for <b>Index</b> and <b>Unique</b>. Now enter a title in the Column Name area. 
+  Type <b>ID</b>:</p>
+<p align="center"><img src="images/databases/Table_DB_PK.gif" width="510" height="291" alt="A Primary Key has been added"></p>
+<p>You now need to specify what kind of data is going in to the column. For our 
+  ID column, we'll have <b>Integers</b>. So scroll along until you come to Data 
+  Type. Click on Data Type and a drop down list will appear. From the drop down 
+  list, select Integers:</p>
+<p align="center"><img src="images/databases/Column_Data_Types.gif" width="359" height="182" alt="Select a Data Type for your column" border="1"></p>
+<p>If your dialogue box is like the second one, then you need to click the Add 
+  Column button to add your first table column. You'll see another dialogue box 
+  appear. This one:</p>
+<p align="center"><img src="images/databases/new_database/add_col_1.gif" width="389" height="372"></p>
+<p>The NAME is the name of the column in the table, like ID, First_Name, etc. 
+  The TYPE is the DATA TYPE, Integer, VARCHAR, etc. Click the dropdown list to 
+  see more. Then check or uncheck the CONSTRAINTS boxes as indicated below:</p>
+<p align="center"><img src="images/databases/new_database/add_col_2.gif" width="388" height="373"></p>
+<p>Click OK and you should be returned to the Create Table dialogue box:</p>
+<p align="center"><img src="images/databases/new_database/create_table_3.gif" width="540" height="335"></p>
+<p>We now have enough for the ID column in the table. Click the Add Column button 
+  on the right to add a new column to the table. Enter the following values for 
+  this column (VARCHAR means a variable number of characters):</p>
+<p class="TextIndent2"><b>Key:</b> Unchecked<br>
+  <b>Index:</b> Unchecked<br>
+  <b>Null</b>: Unchecked<br>
+  <b>Unique:</b> Unchecked<br>
+  <b>Column Name:</b> First_Name<br>
+  <b>Data Type</b>: VARCHAR<br>
+  <b>Size</b>: 20</p>
+<p>For the third column in your table, enter the following values:</p>
+<p class="TextIndent2"><b>Key:</b> Unchecked<br>
+  <b>Index:</b> Unchecked<br>
+  <b>Null:</b> Unchecked<br>
+  <b>Unique:</b> Unchecked<br>
+  <b>Column Name:</b> Last_Name<br>
+  <b>Data Type:</b> VARCHAR<br>
+  <b>Size:</b> 20</p>
+<p>For the final column, here are the values to enter:</p>
+<p class="TextIndent2"><b>Key:</b> Unchecked<br>
+  <b>Index:</b> Unchecked<br>
+  <b>Null:</b> Unchecked<br>
+  <b>Unique:</b> Unchecked<br>
+  <b>Column Name:</b> Job_Title<br>
+  <b>Data Type:</b> VARCHAR<br>
+  <b>Size:</b> 40</p>
+<p>When you're finished, your Table dialogue box should look like this:</p>
+<p align="center"><img src="images/databases/Employees_Columns.gif" width="452" height="136" border="1" alt="The Table dialogue box"></p>
+<p>Click OK when you've entered all the information. Your table and table columns 
+  will then be created:</p>
+<p align="center"><img src="images/databases/Employees_Create_Table2.gif" width="380" height="390" alt="Table columns have been created" border="1"></p>
+<p>The next thing to do is to add some records to the database table. We'll do 
+  that next.</p>
+<P>&nbsp;</P>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="java_and_databases.html">Java and Databases</a></li>
+                            <li><a href="adding_records_to_a_java_database_table.html">Adding Records to a Database Table</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

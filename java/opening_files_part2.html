@@ -1,0 +1,85 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">	
+<p>Actually, you have already written code to open a file. The process is no different 
+  for the open file dialogue box. And because you have already written the classes 
+  that open and write to a file, you can just import them into the current project.</p>
+<p>To import a class that you have already written, have a look at the Properties 
+  window on the left of NetBeans. (If you can't see the properties window, click 
+  the <b>Window</b> menu item at the top of NetBeans. From the Window menu, select 
+  <b>Properties</b>.)</p>
+<p>Expand the entry for your current project, and right-click the Libraries item:</p>
+<p align="center"><img src="images/forms/add_project.gif" width="294" height="328" border="1" alt="Add a project"></p>
+<p>From the menu that appears, select Add Project. When you do, you'll see the 
+  following dialogue box:</p>
+<p align="center"><img src="images/forms/add_project_db.gif" width="467" height="414" alt="The Add Project dialogue box"></p>
+<p>Make sure that the Look in box at the top says &quot;NetBeans Projects&quot;. 
+  Now scroll down and locate your TextFiles project. This is where your classes 
+  are that open and write to a file. Now click the &quot;Add project JAR files&quot; 
+  button. The dialogue box will close and you'll be returned to NetBeans. Have 
+  a look at the Libraries entry for your current project and you'll see that it 
+  has been imported:</p>
+<p align="center"><img src="images/forms/add_project_imported.gif" width="223" height="128" border="1" alt="The project has been imported"></p>
+<p>Now that you've added the classes to your project, you can add an import line 
+  to the top of your code:</p>
+<p class="TextIndent2"><b>import textfiles.ReadFile;</b></p>
+<p>If your recall, ReadFile was what we called the class that opened a file. The 
+  package name we came up with was called textfiles. We're now importing the ReadFile 
+  class, and can now create new objects from it.</p>
+<p class="TextIndent2"><b>ReadFile file_read = new ReadFile( file_name );</b></p>
+<p>Adapt your IF Statement to add the following <b>try &#133;catch</b> code:</p>
+<p align="center"><img src="images/forms/fileChooser_open_code.gif" width="485" height="367" alt="Java code that opens a text file" border="1"></p>
+<p>The code is just about the same as when we opened a text file previously: get 
+  the name of the file and create a new <b>ReadFile</b> object, call the <b>openFile</b> 
+  method we created, and return all the lines as an array, then loop round reading 
+  each line. Notice that we place all the lines in the text area control on our 
+  form.</p>
+<p>&nbsp;</p>
+<p><b>Exercise</b><br>
+  One thing missing, however, is a message in the <b>catch</b> part of the<b> 
+  try &#133; catch</b> block. Move your message box between the curly brackets 
+  of catch. In between the round brackets of <b>showMessageDialog</b> add a suitable 
+  message. Or you can simply use <b>e.getMessage</b>.</p>
+<p><br>
+  When you've completed the code, try it out. You should be to open a file using 
+  your File &gt; Open menu. The text file should then appear in your text area 
+  field.</p>
+<P>&nbsp;</P>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="opening_files.html">File Choser</a></li>
+                            <li><a href="save_file_dialogue_box.html">The Save File Dialogue Box</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

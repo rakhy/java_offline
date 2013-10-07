@@ -1,0 +1,74 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+<p>Because we've made the field variables private, we need another way to assign 
+  values to them. One way to do this is with something called a <b>constructor</b>. 
+  This is a method you can use to set initial values for field variables. When 
+  the object is created, Java calls the constructor first. Any code you have in 
+  your constructor will then get executed. You don't need to make any special 
+  calls to a constructor method - they happen automatically when you create a 
+  new object.</p>
+<p>Constructor methods take the same name as the class. Add the following constructor 
+  to your StudentResults class:</p>
+<p align="center"><img src="images/classes/class_constructor.gif" width="278" height="261" border="1" alt="A Java class constructor has been added to the code"></p>
+<p>So the name of the constructor is <b>StudentResults</b>. This is exactly the 
+  same name as the class itself. Unlike normal methods, class constructors don't 
+  need a return type like int or double, nor any return value. You can, however, 
+  pass values over to your constructors. If we want to pass values over to our 
+  field variables, we can do this:</p>
+<p align="center"><img src="images/classes/class_constructor2.gif" width="409" height="225" border="1" alt="The class constructor setting values for field variables"></p>
+<p>Here, we've added two String variables to the round brackets of the constructor. 
+  Inside the curly brackets we've assigned these values to the <b>Full_Name</b> 
+  and <b>Exam_Grade</b> fields. When you create a new object, you'd then need 
+  two strings between the round brackets of the class name:</p>
+<p class="TextIndent2"><b>StudentResults aStudent = new StudentResults( &quot;Bill 
+  Gates&quot;, &quot;A&quot; );</b></p>
+<p>When the object is created, the values &quot;Bill Gates&quot; and &quot;A&quot; 
+  will be handed over to the constructor.</p>
+<p>However, it's a good idea to just set some default values for your field variables. 
+  These values will then be assigned when the object is created. Add the following 
+  to your constructor:</p>
+<p align="center"><img src="images/classes/class_constructor3.gif" width="308" height="312" border="1" alt="Setting default values in the constructor"></p>
+<p>All four of our field variables will now have default values whenever a new 
+  StudentResults object is created. Notice that we now don't have anything between 
+  the round brackets of the class constructor.</p>
+<p>In the next part, we'll take a look at accessing class variables.</p>
+<P>&nbsp;</P>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="field_variables.html">Field Variables</a></li>
+                            <li><a href="accessing_class_variables.html">Accessing Class Variables</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

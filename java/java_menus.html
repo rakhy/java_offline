@@ -1,0 +1,90 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+<p>You can add menus to your Java forms, things like File, Edit, View, etc. Each 
+  menu has menu items, and these in turn can have sub menus.</p>
+<p>Return to Design view. In the NetBeans palette, locate the Menu Bar item:</p>
+<p align="center"><img src="images/forms/palette_menu.gif" width="295" height="252" alt="The NetBeans Palette showing the Java Menu Bar"></p>
+<p>Drag one to the top of your form. When you let the mouse button go, you'll 
+  have a default File and Edit menu bar:</p>
+<p align="center"><img src="images/forms/menu_default.gif" width="478" height="82" border="1" alt="The default menu bar"></p>
+<p>There's no menu items added by default, though. To add your own, click on the 
+  <b>File</b> menu item to select it. With the File menu item selected, right-click. 
+  A new menu will appear. Select <b>Add From Palette &gt; Menu Item</b>:</p>
+<p align="center"><img src="images/forms/menu_rightClick.gif" width="393" height="311" border="1" alt="Adding a menu item"></p>
+<p>A Menu Item will be added to your File menu:</p>
+<p align="center"><img src="images/forms/menu_menuItem.gif" width="284" height="88" alt="A menu item has been added" border="1"></p>
+<p>What we'll do is to add menu items to open and save a file. </p>
+<p>Double click on the default text <b>jMenuItem1</b>. It will then be highlighted, 
+  so that you can type over it:</p>
+<p align="center"><img src="images/forms/menu_menuItem2.gif" width="284" height="88" alt="Type over the default text" border="1"></p>
+<p>Type <b>Open</b>, then press the enter key on your keyboard:</p>
+<p align="center"><img src="images/forms/menu_menuItem3.gif" width="284" height="88" border="1" alt="An Open item has been added to the menu"></p>
+<p>Add another menu item in the way. This time, type <b>Save</b> as the menu item:</p>
+<p align="center"><img src="images/forms/menu_menuItem4.gif" width="284" height="88" border="1" alt="Add a Save item"></p>
+<p>As you can see above, you can add shortcuts for your menu items. Click on to 
+  the Open menu item, then onto the shortcut for it:</p>
+<p align="center"><img src="images/forms/menu_menuItem5.gif" width="284" height="88" border="1" alt="Select the Shortcut for the menu item"></p>
+<p>With the shortcut item selected, have a look at the properties window:</p>
+<p align="center"><img src="images/forms/menu_accelerator.gif" width="295" height="365" alt="Properties for a menu item"></p>
+<p>Locate the <b>Accelerator</b> item, and click the small button to the right 
+  of the row. A dialogue box appears. You can set which shortcut keys you want 
+  for a menu item from this dialogue box. An open shortcut is usually CTRL + O.</p>
+<p>Type an O in the box, and Shift + O will appear. Uncheck the Shift item and 
+  check Ctrl instead:</p>
+<p align="center"><img src="images/forms/menu_accelerator2.gif" width="459" height="402" alt="The accelerator dialogue box"></p>
+<p>Click OK, and the shortcut will be added to your Java menu item:</p>
+<p align="center"><img src="images/forms/menu_menuItem6.gif" width="284" height="88" border="1" alt="A shortcut for the menu item"></p>
+<p>To see if all this works, click back on the Open menu item to highlight it. 
+  Now right click. From the menu that appears, select <b>Events &gt; Action &gt; 
+  Action Performed</b>. This will create a code stub for the menu item. Enter 
+  the following for the code:</p>
+<p class="TextIndent2"><b><font size="2">javax.swing.JOptionPane.showMessageDialog( 
+  FormObjects.this, &quot;Open&quot; );</font></b></p>
+<p>This is just a message box.</p>
+<p>Run your programme and try it out. Click <b>File &gt; Open</b> and you should 
+  see the message box appear. Click OK to get rid of it. Now try your shortcut. 
+  Hold down the Ctrl key on your keyboard. Keep it held down and press the letter 
+  O. Again, the menu should appear.</p>
+<p>Stop your programme and return to your code stub. Comment out the message box. 
+  What we'll do is to write code to display a File Open dialogue box. A user can 
+  then select a file to be opened. We'll do that in the next part.</p>
+<P>&nbsp;</P>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="java_radio_buttons.html">Radio Buttons</a></li>
+                            <li><a href="opening_files.html">File Open Dialogue Boxes</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+                <P>Arrays come into their own with loops. You have seen in <a href="java_arrays.html">the 
+                        previous section</a> that to assign values to array positions, you did this:</P>
+                <p class="TextIndent2"><b>aryNums[0] = 10;</b></p>
+                <p>But that's not terribly practical if you have a lot of numbers to assign to 
+                    an array. As an example, imagine a lottery programme that has to assign the 
+                    numbers 1 to 49 to positions in an array. Instead of typing a long list of array 
+                    positions and values you can use a loop. Here's some code that does just that:</p>
+                <p align="center"><img src="images/arrays/arrays_lottnums.gif" width="438" height="292" border="1" alt="A Java array used in a loop"></p>
+                <p>So we set up an array to hold 49 integer values. Then comes the loop code. 
+                    Notice the end condition of the loop:</p>
+                <p class="TextIndent2"><b>i &lt; lottery_numbers.length</b></p>
+                <p><b>Length</b> is a property of array objects that you can use to get the size 
+                    of the array (how many positions it has). So this loop will keep going round 
+                    and round while the value in the variable i is less than the size of the array.</p>
+                <p>To assign values to each position in the array, we have this line:</p>
+                <p class="TextIndent2"><b>lottery_numbers[i] = i + 1;</b></p>
+                <p>Instead of a hard-code value between the square brackets of the array name, 
+                    we have the variable called <b>i</b>. This increases by 1 each time round the 
+                    loop, remember. Each array position can then be accessed just by using the loop 
+                    value. The value that is being assigned to each position is i + 1. So again, 
+                    it's just the incremented loop value, this time with 1 added to it. Because 
+                    the loop value is starting at 0, this will give you the numbers 1 to 49. </p>
+                <p>The other line in the loop just prints out whatever value is in each array 
+                    position.<br>
+                    (If you wanted, you could then write code to jumble up the numbers in the array. 
+                    Once you have jumbled up the values, you could then take the first 6 and use 
+                    them as the lottery numbers. Write another chunk of code that compares a user's 
+                    6 numbers with the winning numbers and you have a lottery programme!)</p>
+                <p>In the next part, you'll see how to sort your arrays.</p>
+                
+                <div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="java_arrays.html">Arrays</a></li>
+                            <li><a href="sorting_arrays.html">Sorting Java Arrays</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

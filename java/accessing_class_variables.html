@@ -1,0 +1,98 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+                <p>Now that we have some default values, we can add a method that sets some different 
+                    values for them. Add the following method to your StudentResults class:</p>
+                <p align="center"><img src="images/classes/sr_fullName.gif" width="310" height="387" border="1" alt="Adding a method that changes a field variable"></p>
+                <p>This new method is called <b>fullName</b>, and has a String variable called 
+                    <b>aName</b> between its round brackets. The method doesn't do a great deal, 
+                    and is here for simplicity's sake. We could have had the method do more work, 
+                    like checking it for errors, making sure it's proper case, checking for blank 
+                    strings, etc. But the important point is that it sets a value for the <b>Full_Name</b> 
+                    field, and returns this field as a value. When we call this method, it will 
+                    overwrite the default value for Full_Name and insert a new value. Whatever is 
+                    in the variable <b>aName</b> will be the new Full_Name value. Let's see it in 
+                    action.</p>
+                <p>Click back to your ExamDetails class. Add the following two lines:</p>
+                <p class="TextIndent2"><b>String sName = aStudent.fullName(&quot;Bill Gates&quot;);<br>
+                        System.out.println( sName );</b></p>
+                <p>The code for your ExamDetails class should look like the one below:</p>
+                <p align="center"><img src="images/classes/exams_main_fullName.gif" width="458" height="242" border="1" alt="Calling the new Java class method"></p>
+                <p>What we're doing here is calling the <b>fullName</b> method of our <b>aStudent</b> 
+                    object. We're handing over a value of &quot;Bill Gates&quot;. This will then 
+                    be the value for the <b>Full_Name</b> field. (It could have been checked for 
+                    errors, amended, and then stored in the field.) The Full_Name value is then 
+                    returned and stored in the variable <b>sName</b>. </p>
+                <p>Just like the methods we created in the previous section, though, our fullName 
+                    method is on the NetBeans popup list. Notice that the constructor is not there, 
+                    however:</p>
+                <p align="center"><img src="images/classes/sr_fullName_list.gif" width="295" height="182" alt="The new method is on the NetBeans list"></p>
+                <p>Run your code to test it out. The Output window should display the following:</p>
+                <p align="center"><img src="images/classes/output_fullName.gif" width="318" height="94" border="1" alt="Output window 1"></p>
+                <p>What we've done, then, is to set a value for a field variable in a class called 
+                    <b>StudentResults</b>. We've then accessed that value and printed it out.</p>
+                <p>Let's now add a method that actually does something useful. What we'll do is 
+                    to allow a user to enter a two letter exam code. We'll then pass those two letters 
+                    over to a method that turns the two letters into an exam name. For example, 
+                    if a user enters the letter &quot;VB&quot;, the method will return the string 
+                    &quot;Visual Basic .NET&quot;. The longer string will be stored in the Exam_Name 
+                    field variable.</p>
+                <p>Add the following code to your StudentResults class, just below your fullName 
+                    method:</p>
+                <p align="center"><img src="images/classes/sr_examName.gif" width="372" height="479" border="1" alt="A new Java method added to the class"></p>
+                <p>The <b>examName</b> method has a string variable called examCode between its 
+                    round brackets. This string will be the two letters. The IF &#133; ELSE IF lines 
+                    check to see which two letters are in the string. If we find a match for the 
+                    two letters then a longer exam title is placed into the Exam_Name field. If 
+                    no match is found then the text will be &quot;No Exam Selected&quot;.</p>
+                <p>Go back to your ExamDetails class and add the following line:</p>
+                <p class="TextIndent2"><b>String exam = aStudent.examName(&quot;VB&quot;);</b></p>
+                <p>Again, we're just making a call to the method. We hand over to the two letters 
+                    &quot;VB&quot;. The method returns the value &quot;Visual Basic .NET&quot;, 
+                    and then stores it in the string variable we've called exam. Add a new print 
+                    line and your code should look like this:</p>
+                <p align="center"><img src="images/classes/exams_main_examMethod.gif" width="457" height="257" border="1" alt="What your Java code should look like now"></p>
+                <p>Run your code and the Output should be this:</p>
+                <p align="center"><img src="images/classes/output_exam.gif" width="313" height="100" border="1" alt="Output window 2"></p>
+                <p>&nbsp;</p>
+                <p>We'll continue this lesson in the next part, as the page is getting a bit too 
+                    long!</p>
+                <P>&nbsp;</P>
+                <div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="class_constructor.html">The Class Constructor</a></li>
+                            <li><a href="more_class_methods.html">More Java Class Methods</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

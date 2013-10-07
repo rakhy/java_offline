@@ -1,0 +1,89 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+<P>The arrays you have been using so far have only held one column of data. But 
+  you can set up an array to hold more than one column. These are called multi-dimensional 
+  arrays. As an example, think of a spreadsheet with rows and columns. If you 
+  have 6 rows and 5 columns then your spreadsheet can hold 30 numbers. It might 
+  look like this:</P>
+<p align="center"><img src="images/arrays/array_image_2D.gif" width="345" height="139" border="1" alt="A representation of a 2-dimensional array"></p>
+<p>A multi dimensional array is one that can hold all the values above. You set 
+  them up like this:</p>
+<p class="TextIndent2"><b>int[ ][ ] aryNumbers = new int[</b>6<b>][</b>5<b>];</b></p>
+<p>They are set up in the same way as a normal array, except you have two sets 
+  of square brackets. The first set of square brackets is for the rows and the 
+  second set of square brackets is for the columns. In the above line of code, 
+  we're telling Java to set up an array with 6 rows and 5 columns. To hold values 
+  in a multi-dimensional array you have to take care to track the rows and columns. 
+  Here's some code to fill the first rows of numbers from our spreadsheet image:</p>
+<p class="TextIndent2"><b>aryNumbers[0][0] = 10;<br>
+  aryNumbers[0][1] = 12;<br>
+  aryNumbers[0][2] = 43;<br>
+  aryNumbers[0][3] = 11;<br>
+  aryNumbers[0][4] = 22;</b></p>
+<p>So the first row is row 0. The columns then go from 0 to 4, which is 5 items. 
+  To fill the second row, it would be this:</p>
+<p class="TextIndent2"><b>aryNumbers[1][0] = 20;<br>
+  aryNumbers[1][1] = 45;<br>
+  aryNumbers[1][2] = 56;<br>
+  aryNumbers[1][3] = 1;<br>
+  aryNumbers[1][4] = 33;</b></p>
+<p> The column numbers are the same, but the row numbers are now all 1.</p>
+<p>To access all the items in a multi-dimensional array the technique is to use 
+  one loop inside of another. Here's some code to access all our number from above. 
+  It uses a double for loop:</p>
+<p align="center"><img src="images/arrays/double_for_loop.gif" width="429" height="243" border="1" alt="Java code showing how to use two for loops with a 2-dimensional array"></p>
+<p>The first for loop is used for the rows; the second for loop is for the columns. 
+  The first time round the first loop, the value of the variable i will be 0. 
+  The code inside of the for loop is another loop. The whole of this second loop 
+  will be executed while the value of the variable i is 0. The second for loop 
+  use a variable called j. The i and the j variables can then be used to access 
+  the array.</p>
+<p class="TextIndent2"><b>aryNumbers[ i ][ j ]</b></p>
+<p>So the two loop system is used to go through all the values in a multi-dimensional 
+  array, row by row.</p>
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+<p>Multi-dimensional arrays can be quite tricky, but mainly because it's hard 
+  to keep track of all your rows and columns! In the next part, you'll learn about 
+  array lists.</p>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="arrays_and_strings.html">Arrays and Strings</a></li>
+                            <li><a href="array_lists.html">Array Lists in Java</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>
+

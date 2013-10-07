@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+<P>You can check to see which single character is in a particular string. The 
+  <b>charAt</b> method is used for this in Java. Here's some code to try:</P>
+<p class="TextIndent2"><b>String email_address = &quot;meme@me.com&quot;;</b></p>
+<p class="TextIndent2"><b>char aChar = email_address.charAt( 4 );<br>
+  System.out.println( aChar );</b></p>
+<p>This code checks which letter as at position 4 in the email address string. 
+  The return value is a variable of type <b>char</b>:</p>
+<p class="TextIndent2"><b>char aChar = email_address.charAt( 4 );</b></p>
+<p>When the above code is run, the output is the character @. The number between 
+  the round brackets of charAt is the position in the string you're trying to 
+  check. Here, we want to get at the character in position 4 of the email_address 
+  string. Again, the count starts at 0, just like substring.</p>
+<p>One good use for charAt is for taking a letter from a string variable that 
+  is typed by a user, and then converting it to a single char variable. For example, 
+  you could ask the user to type Y to continue or an N to exit. Have a look at 
+  this code:</p>
+<p align="center"><img src="images/strings/charAt.gif" width="402" height="317" border="1" alt="Java code showing use of the charAt method"></p>
+<p>We can't use the Scanner class directly to get a single letter to store in 
+  a char variable. So we use the next( ) method to get the next string that the 
+  user inputs. There's a next integer, next long, next double - even a next Boolean. 
+  But there's no next char. Even if the user inputs a single character it will 
+  still be a string and not a char. (Remember: a char variable stores a Unicode 
+  number as an integer.) </p>
+<p>We can use charAt to get a character from any string that the user inputs, 
+  even if the user inputs a single letter:</p>
+<p class="TextIndent2"><b>char aChar = aString.charAt( 0 );</b></p>
+<p>All we're saying is &quot;Get the character at position 0 in the string called 
+  aString, then store it in the aChar variable&quot;.</p>
+<p>We've added an IF statement to test what is in the aChar variable. (Note the 
+  use of single quotes around the letter Y.)</p>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="equals.html">The equals Method</a></li>
+                            <li><a href="replace.html">The replace Method</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

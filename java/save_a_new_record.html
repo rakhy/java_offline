@@ -1,0 +1,91 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+<p>Before you can save a new record, you have to move the Cursor to something 
+  called the <b>Insert Row</b>. This creates a blank record in the ResultSet. 
+  You then add the data to the ResultSet:</p>
+<p class="TextIndent2"><b>rs.moveToInsertRow( );</b></p>
+<p class="TextIndent2"><b>rs.updateInt(&quot;ID&quot;, newID);<br>
+  rs.updateString(&quot;First_Name&quot;, first);<br>
+  rs.updateString(&quot;Last_Name&quot;, last);<br>
+  rs.updateString(&quot;Job_Title&quot;, job);</b></p>
+<p class="TextIndent2"><b>rs.insertRow( );</b></p>
+<p>After adding the data to the ResultSet, the final line inserts a new row.</p>
+<p>However, to commit any changes to the database what we'll do is to close our 
+  Statement object and our ResultSet object. We can then reload everything. If 
+  we don't do this, there's a danger that the new record won't get added, either 
+  to the ResultSet or the database. (This is due to the type of Driver we've used.)</p>
+<p>To close a Statement or a ResultSet, you just issue the close command:</p>
+<p class="TextIndent2"><b>stmt.close( );<br>
+  rs.close( );</b></p>
+<p>The code to reload everything is the same as the code you wrote when the form 
+  first loads:</p>
+<p class="TextIndent2"><b>stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, 
+  ResultSet.CONCUR_UPDATABLE);</b></p>
+<p class="TextIndent2"><b>String sql = &quot;SELECT * FROM Workers&quot;;<br>
+  rs = stmt.executeQuery(sql);</b></p>
+<p class="TextIndent2"><b>rs.next( );<br>
+  int id_col = rs.getInt(&quot;ID&quot;);<br>
+  String id = Integer.toString(id_col);<br>
+  String first2 = rs.getString(&quot;First_Name&quot;);<br>
+  String last2 = rs.getString(&quot;Last_Name&quot;);<br>
+  String job2 = rs.getString(&quot;Job_Title&quot;);</b></p>
+<p class="TextIndent2"><b>textID.setText(id);<br>
+  textFirstName.setText(first2);<br>
+  textLastName.setText(last2);<br>
+  textJobTitle.setText(job2);</b></p>
+<p>You're not doing anything different, here: just selecting all the records again 
+  and putting the first one in the Text Fields.</p>
+<p>Here's all the code that saves a new record to the database (Obviously, a lot 
+  of this code could have went into a method of its own):</p>
+<p align="center"><img src="images/databases/forms/btnSave.gif" width="420" height="832" border="1" alt="Java code to save a record to a database"></p>
+<p>The code is a bit long, but you can copy and paste a lot of it from your <b>DoConnect</b> 
+  method. (We've Photo-shopped the <b>stmt</b> line because it's too big to fit 
+  on this page. Yours should go on one line).</p>
+<p>(One other issue is that the ID column needs to be unique. Ideally, you'd write 
+  a routine to get the last ID number, then add one to it. Other databases, like 
+  MySql, have an AutoIncrement value to take care of these things. Just make sure 
+  that the ID value isn't one you have used before, otherwise you'll get an error 
+  message. Or write a routine to get a unique ID!)</p>
+<p>Run your programme and test it out. You now be able to save new records to 
+  your database.</p>
+<p>In the next lesson, you learn about deleting records</p>
+<P>&nbsp;</P>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="add_a_new_record_to_the_database.html">Add a Record</a></li>
+                            <li><a href="delete_a_record_from_a_database.html">Delete a Record</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

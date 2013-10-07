@@ -1,0 +1,148 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+</span>
+<p>In a later section, you'll create a Java form that loads information from a 
+  database. The form will have Next and Previous to scroll through the data. Individual 
+  records will then be displayed in text fields. We'll also add button to Update 
+  a record, Delete a record, and create a new record in the database.</p>
+<p>To get started, and for simplicity's sake, we'll use a terminal/console window 
+  to output the results from a database.</p>
+<p>So start a new project for this by clicking <b>File &gt; New Project</b> from 
+  the NetBeans menu. Create a <b>Java Application</b>. Call the package <b>database_consol</b>e, 
+  and the Main class <b>DBConnect</b>:</p>
+<p align="center"><img src="images/databases/new_db_console.gif" width="404" height="303" alt="The New Project dialogue box in NetBeans" border="1"></p>
+<p>When you click Finish, your code should look like this:</p>
+<p align="center"><img src="images/databases/console_blank_code.gif" width="366" height="147" alt="Default Java code" border="1"></p>
+<p>&nbsp;</p>
+<h2>Connecting to the Database</h2>
+<p>To connect to a database you need a Connection object. The Connection object 
+  uses a DriverManager. The DriverManager passes in your database username, your 
+  password, and the location of the database.</p>
+<p>Add these three import statements to the top of your code:</p>
+<p class="TextIndent2"><b>import java.sql.Connection;<br>
+  import java.sql.DriverManager;<br>
+  import java.sql.SQLException;</b></p>
+<p>To set up a connection to a database, the code is this:</p>
+<p class="TextIndent2"><b><font size="2">Connection con = DriverManager.getConnection(</font></b><font size="2"> 
+  host, username, password <b>);</b></font></p>
+<p>So the DriverManager has a method called getConnection. This needs a host name 
+  (which is the location of your database), a username, and a password. If a connection 
+  is successful, a Connection object is created, which we've called <b>con</b>.</p>
+<p>You can get the host address by looking at the Services tab on the left of 
+  NetBeans:</p>
+<p align="center"><img src="images/databases/services_host.gif" width="364" height="265" alt="The host address of the database" border="1"></p>
+<p>The address of the highlighted database above is:</p>
+<p class="TextIndent2"><b>jdbc:derby://localhost:1527/Employees</b></p>
+<p>The first part, <b>jdbc:derby://localhost</b>, is the database type and server 
+  that you're using. The 1527 is the port number. The database is <b>Employees</b>. 
+  This can all go in a String variable:</p>
+<p class="TextIndent2"><b>String host = &quot;jdbc:derby://localhost:1527/Employees&quot;;</b></p>
+<p>Two more strings can be added for the username and password:</p>
+<p class="TextIndent2"><b>String uName = &quot;Your_Username_Here&quot;;<br>
+  String uPass= &quot; Your_Password_Here &quot;;</b></p>
+<p>Add these three string before the connection object and your code would look 
+  like this:</p>
+<p align="center"><img src="images/databases/connection_code.gif" width="483" height="308" alt="Java code to set up a database connection object" border="1"></p>
+<p>As you can see in the image above, there is a wavy underline for the Connection 
+  code. The reason for this is because we haven't trapped a specific error that 
+  will be thrown up when connecting to a database - the SQLException error.</p>
+<p>It's the DriverManager that attempts to connect to the database. If it fails 
+  (incorrect host address, for example) then it will hand you back a SQLException 
+  error. You need to write code to deal with this potential error. In the code 
+  below, we're trapping the error in catch part of the <b>try &#133; catch</b> 
+  statement:</p>
+<p class="TextIndent2"><b>try {</b></p>
+<p><b><span class="TextIndent2">}</span><br>
+  <span class="TextIndent2">catch ( SQLException err ) {</span><br>
+  <span class="TextIndent3">System.out.println( err.getMessage( ) );</span><br>
+  <span class="TextIndent2">}</span></b></p>
+<p>In between the round brackets of catch, we've set up a SQLException object 
+  called <b>err</b>. We can then use the <b>getMessage</b> method of this err 
+  object.<br>
+  <br>
+  Add the above <b>try &#133;catch</b> block to your own code, and move your four 
+  connection lines of code to the try part. Your code will then look like this:</p>
+<p align="center"><img src="images/databases/connection_code2.gif" width="506" height="212" alt="Catching a SQLException error" border="1"></p>
+<p>Try running your code and see what happens.</p>
+<p>You may get this error message in the console window:</p>
+<p class="TextIndent2"> <b>&quot;java.net.ConnectException : Error connecting 
+  to server localhost on port 1527 with message Connection refused: connect.&quot;</b></p>
+<p>If you do, it means you haven't connected to your database server. In which 
+  case, right click on Java DB in the Services window. From the menu that appears, 
+  click Start Server:</p>
+<p align="center"><img src="images/databases/services_start_server.gif" width="364" height="219" alt="Start the JAVA DB server"></p>
+<p>You need to make sure that any firewall you may have is not blocking the connection 
+  to the server. A good firewall will immediately display a message alerting you 
+  that something is trying to get through, and asking if you want to allow or 
+  deny it. When you allow the connection, your NetBeans output window should print 
+  the following message:</p>
+<p class="TextIndent2"><b>&quot;Apache Derby Network Server - 10.4.1.3 - (648739) 
+  started and ready to accept connections on port 1527 at DATE_AND_TIME_HERE&quot;</b></p>
+<p>Once your server is started, run the programme again. There's a very good chance 
+  you'll get another error message:</p>
+<p align="center"><b>&quot;No suitable driver found for jdbc:derby://localhost:1527/Employees&quot;</b></p>
+<p>The reason for this error is that the DriverManager needs a Driver in order 
+  to connect to the database. Examples of drivers are Client Drivers and Embedded 
+  Drivers. You can import one of these so that the DriverManager can do its job.</p>
+<p>Click on the <b>Projects</b> tab to the left of the <b>Services</b> window 
+  in NetBeans. (If you can't see a Projects tab, click <b>Window &gt; Projects</b> 
+  from the menu bar at the top of NetBeans.)</p>
+<p>Locate your project and expand the entry. Right-click <b>Libraries</b>. From 
+  the menu that appears, select<b> Add Jar/Folder</b>:</p>
+<p align="center"><img src="images/databases/projects_add_jar.gif" width="338" height="263" alt="The Add JAR/Folder menu"></p>
+<p>When you click on Add Jar/Folder a dialogue box appears. What you're doing 
+  here is adding a Java Archive file to your project. But the JAR file you're 
+  adding is for the derby Client Drivers. So you need to locate this folder. On 
+  a computer running Windows this will be in the following location:</p>
+<p class="TextIndent2"><b>C:\Program Files\Sun\JavaDB\lib</b></p>
+<p>The file you're looking for is called <b>derbyclient.jar</b>. If you can't 
+  find it, or are using an operating system other than Windows, then do a search 
+  for this file. Note the location of the file.</p>
+<p>In the dialogue box, select the <b>derbyclient.jar</b> file:</p>
+<p align="center"><img src="images/databases/projects_add_jar_DB.gif" width="503" height="328" alt="The Add Jar/Folder dialogue box"></p>
+<p>Click Open and the file will be added to your project library:</p>
+<p align="center"><img src="images/databases/projects_add_jar_client.gif" width="324" height="182" alt="The JAR file has been added to the project"></p>
+<p>Now that you have a Client driver added to your project, run your programme 
+  again. You should now be error free. (The Output window will just say Run, and 
+  Build Successful.)</p>
+<p>In the next lesson, we'll continue with this Java database tutorial.</p>
+<P>&nbsp;</P>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="sql_commands.html">SQL Commands</a></li>
+                            <li><a href="connecting_to_a_database_table.html">Connecting to the Database Table</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

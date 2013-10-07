@@ -1,0 +1,81 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+<P>You can place strings of text into arrays. This is done in the same way as 
+  for integers:</P>
+<p class="TextIndent2"><b>String[ ] aryString = new String[5] ;</b></p>
+<p class="TextIndent2"><b>aryString[0] = &quot;This&quot;;<br>
+  aryString[1] = &quot;is&quot;;<br>
+  aryString[2] = &quot;a&quot;;<br>
+  aryString[3] = &quot;string&quot;;<br>
+  aryString[4] = &quot;array&quot;;</b></p>
+<p>The code above sets up a string array with 5 positions. Text is then assigned 
+  to each position in the array.</p>
+<p>Here's a loop that goes round all the positions in the array, printing out 
+  whatever is at each position:</p>
+<p><span class="TextIndent2"><b>int i;</b></span><b><br>
+  <span class="TextIndent2">for ( i=0; i &lt; aryString.length; i++ ) {</span><br>
+  <span class="TextIndent3">System.out.println( aryString[i] );</span><br>
+  <span class="TextIndent2">}</span></b></p>
+<p>The loop goes round and round while the value in the variable called i is less 
+  than the length of the array called aryString.</p>
+<p>When the above programme is run, the Output window will look like this:</p>
+<p align="center"><img src="images/arrays/arrays_strings_1.gif" width="320" height="149" border="1" alt="Output window showing the results of a java string array"></p>
+<p>You can perform a sort on string arrays, just like you can with integers. But 
+  the sort is an alphabetical ascending one, meaning that &quot;aa&quot; will 
+  come first over &quot;ab&quot;. However, Java uses Unicode characters to compare 
+  one letter in your string to another. This means that uppercase letter will 
+  come before lowercase ones. Try the following code:</p>
+<p align="center"><img src="images/arrays/arrays_strings_sort.gif" width="396" height="437" border="1" alt="Sorting a java string array"></p>
+<p>When the programme is run, the Output window will display the following:</p>
+<p align="center"><img src="images/arrays/arrays_strings_sort_2.gif" width="320" height="142" border="1" alt="Unexpected results in the output window"></p>
+<p>Although we've sorted the array, the word &quot;This&quot; comes first. If 
+  this were an alphabetical sort, you'd expect the word &quot;a&quot; to come 
+  first.&quot; And it does if all the letters are lowercase. In your programming 
+  code, change the capital &quot;T&quot; of &quot;This&quot; to a lowercase &quot;t&quot;. 
+  Now run your programme again. The Output window will now display the following:</p>
+<p align="center"><img src="images/arrays/arrays_strings_sort_3.gif" width="335" height="152" border="1" alt="Alphabetic sort"></p>
+<p>As you can see, the word &quot;this&quot; is now at the bottom. We'll have 
+  a closer look at strings in the next section, so don't worry too much about 
+  them now.</p>
+<p>&nbsp;</p>
+
+<p>In the next lesson, you'll learn about multi-dimensional arrays in java.</p>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="sorting_arrays.html">Sorting Java Arrays</a></li>
+                            <li><a href="multi-dimensional_arrays.html">Multi-Dimensional Arrays</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

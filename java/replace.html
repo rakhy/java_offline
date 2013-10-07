@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+                <P>The replace method in Java is used to replace all occurrence of a character/s 
+                    in a particular string. Take this sentence:</P>
+                <p align="center"><b>&quot;Where are you books?&quot;</b></p>
+                <p>We want to replace &quot;you&quot; with &quot;your&quot;. Here's the code:</p>
+                <p align="center"><img src="images/strings/replace.gif" width="419" height="154" border="1" alt="Java code showing use of the replace method"></p>
+                <p>There are several ways to use the replace method, and they differ in what you 
+                    put between the round brackets of the method. We're replacing one sequence of 
+                    characters with another. Think of the comma separating the two as the word &quot;with&quot;. 
+                    You'd then have &quot;Replace you with your&quot;.</p>
+                <p>You can also replace single character:</p>
+                <p class="TextIndent2"><b>aString.replace( '&pound;', '@' )</b></p>
+                <p>The above code reads &quot;Replace &pound; with @&quot;.</p>
+                <p>(You can also use something called a regular expression in your replace methods, 
+                    but that is outside the scope of this book.)<br>
+                </p>
+                <p>&nbsp;</p>
+                <h3>Trim</h3>
+                <p>You can trim white space from your strings White space is things like space 
+                    characters, tabs, and newline characters - the characters you can't see, in 
+                    other words. The trim method is easy to use:</p>
+                <p class="TextIndent2"><b>String amend = &quot; white space &quot;;<br>
+                        amend = amend.trim( );</b></p>
+                <p>So the trim method goes after the string you want to amend. The blank characters 
+                    before the word &quot;white&quot; and after &quot;space&quot; in the code above 
+                    will then be deleted.</p>
+                <p>If you're getting input from a user then it's always a good idea to use trim 
+                    on the inputted strings.</p>
+                <p></p>
+                <p>&nbsp;</p>
+                <p>OK, we'll leave string manipulation there and move on. Next up - formatted 
+                    strings of text.</p>
+                <div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="charAt.html">The charAt Method</a></li>
+                            <li><a href="java_formatted_strings.html">Formatted Text</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

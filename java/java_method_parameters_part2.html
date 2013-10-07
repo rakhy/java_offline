@@ -1,0 +1,69 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+<P>You can pass more than one value over to your methods. Add the following method 
+  to <a href="java_method_parameters.html">your MyMethods class</a>:</P>
+<p align="center"><img src="images/methods/New_Class_print.gif" width="373" height="104" border="1" alt="A Java method with two parameters"></p>
+<p>All this method does is to print something out. Between the round brackets 
+  of the method name we have two values, a String variable called aString and 
+  an int variable called aVal. When we call this method, we need a string first 
+  and then a number. Try to do it the other way round and you'll get error messages.</p>
+<p>Go back to your TestMethods class and make the following call to the method:</p>
+<p class="TextIndent2"><b>test1.print_text( &quot;The value was &quot;, aVal2 
+  );</b></p>
+<p>Again, the <b>print_text</b> method should show up on the NetBeans popup list.</p>
+<p align="center"><img src="images/methods/New_Class_print2.gif" width="351" height="236" alt="Method added to the list"></p>
+<p>The values (parameters) that we specified are between the round brackets, along 
+  with the return method, void.</p>
+<p>But your main coding window should now look like this:</p>
+<p align="center"><img src="images/methods/New_Class_print3.gif" width="436" height="297" border="1" alt="The whole of the Java code from our Main method"></p>
+<p>The two values that we are passing over are separated by a comma. Notice that 
+  the value inside of <b>aVal2</b> is being passed over. However, the variable 
+  name inside of the round brackets of <b>print_text</b> is called <b>aVal</b>. 
+  Although the two variable names are different, this doesn't matter. What you 
+  are doing is passing values over to the method. So the variable aVal will end 
+  up with the same value as aVal2.</p>
+<p>If you run your programme now, you should see the following in the Output window:<br>
+</p>
+<p align="center"><img src="images/methods/output_print.gif" width="323" height="130" border="1" alt="Output window"></p>
+<p>We'll leave methods there for the time being. We'll be writing more methods 
+  as we go along, so you should get plenty of practice. The next section is about 
+  Classes - Object Oriented Programming.</p>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="java_method_parameters.html">Parameters</a></li>
+                            <li><a href="write_your_own_java_classes.html">Writing your own Java Classes</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

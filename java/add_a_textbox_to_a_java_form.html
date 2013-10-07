@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+<p>What our form needs now is a text box and some buttons. Let's add the text 
+  box first. </p>
+<p>Locate the Text Field control in the Palette:</p>
+<p align="center"><img src="images/forms/palette_textField.gif" width="302" height="365" alt="The Text Field control in the NetBeans Palette"></p>
+<p>Controls in the NetBeans Palette can be dragged onto a form. So click on Text 
+  Field to select it. Now hold you left mouse button down on the Text Field. Keep 
+  it held down and drag the control onto the form:</p>
+<p align="center"><img src="images/forms/textField_mouse.gif" width="342" height="282" border="1" alt="A Text Filed being dragged on to a Java Form"></p>
+<p>Let go anywhere on the form:</p>
+<p align="center"><img src="images/forms/textField_dropped.gif" width="342" height="282" border="1" alt="A Text Field dropped on to the form"></p>
+<p>The squares around the text field are sizing handles. You can hold down your 
+  left mouse button on one of the squares and drag to a new width or height. The 
+  dotted lines are position indicators, one for the left position and one for 
+  the top position. Notice that the default name for the text field is <b>jTextField1</b>. 
+  Let's change that.</p>
+<p>With the text field selected, have a look at the <b>Inspector</b> area in the 
+  bottom left: (If you can't see an Inspector area, click <b>Window &gt; Navigating 
+  &gt; Inspector</b> from the NetBeans menu bar.)</p>
+<p align="center"><img src="images/forms/inspector_TF.gif" width="288" height="153" alt="Inspector area showing a default Text Field"></p>
+<p>As you can see, <b>jTextField1</b> is selected in the Inspector. This area 
+  shows you what objects you have on your forms. You can also rename an object 
+  from here. To do so, right click on jTextField1. From the menu that appears, 
+  select <b>Change Variable Name</b>.</p>
+<p align="center"><img src="images/forms/inspector_changeVarName.gif" width="390" height="305" alt="Renaming a Java Text Field" border="1"></p>
+<p>When you click on Change Variable Name, a dialogue box appears. Type a new 
+  name for the Text Field. Call it <b>txtDisplay</b>:</p>
+<p align="center"><img src="images/forms/inspector_changeVarName2.gif" width="294" height="125" alt="Type a new name for the Text Field"></p>
+<p>Click OK. When you do, NetBeans will rename your text field:</p>
+<p align="center"><img src="images/forms/inspector_TF_renamed.gif" width="288" height="153" border="1" alt="The Text Field has now been renamed"></p>
+<p>Now have a look at your code again by clicking the <b>Source</b> button in 
+  the main window. When your code appears, scroll down to the bottom. You'll see 
+  that a new private field variable has been added:</p>
+<p align="center"><img src="images/forms/code_swing_textfield.gif" width="464" height="233" border="1" alt="Java code shows the name of the new  Text Field"></p>
+<p>So a <b>JTextField</b> variable has been set up with the name <b>txtDisplay</b>. 
+  The &quot;javax.swing&quot; part is a reference to a set of packages that are 
+  used for GUI development. Swing makes it easier for you to create forms and 
+  the controls on forms.</p>
+<p>Click on the <b>Design</b> button at the top to return to your form. The text 
+  field has some default text in, at the moment. You can add your own text by 
+  changing the text property of the text field.</p>
+<p>Make sure your text field is selected on the form. Now locate text in the properties 
+  window:</p>
+<p align="center"><img src="images/forms/properties_text.gif" width="303" height="364" border="1" alt="Default text for the Text Field property"></p>
+<p>Delete the default text of <b>jTextField1</b> and leave it blank:</p>
+<p align="center"><img src="images/forms/properties_text2.gif" width="303" height="363" border="1" alt="Leave the text property blank"></p>
+<p>Then press the enter key on your keyboard. Have a look at your text field object 
+  on the form. It may well have changed size. Use the sizing handles to resize 
+  it. You'll see that it now has no text in it at all:</p>
+<p align="center"><img src="images/forms/textField_blank.gif" width="342" height="282" border="1" alt="A  blank text field on a Java form"></p>
+<p>The text field on our calculator will obviously be used for the output of the 
+  calculation. But it won't work without buttons. You'll see how to add those 
+  in the next part of this tutorial.</p>
+<P>&nbsp;</P>
+       
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="form_views.html">Form Views</a></li>
+                            <li><a href="add_a_button_to_a_java_form.html">Adding buttons to a Java Form</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

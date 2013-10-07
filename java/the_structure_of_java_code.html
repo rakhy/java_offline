@@ -1,0 +1,79 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+                <P>In <a href="java_comments.html">the previous section</a>, you tidied up your 
+                    code a bit. Here's what your coding window should look like now:</P>
+                <p align="center"><img src="images/started/code_comments_deleted.gif" width="491" height="283" border="1" alt="First Java Project Code"></p>
+                <p>You can see we have the package name first. Notice how the line ends with a 
+                    semicolon. If you miss the semicolon out, the programme won't compile:</p>
+                <p class="TextIndent3"><font color="#0000FF">package</font><b> firstproject;</b></p>
+                <p>The class name comes next:</p>
+                <p class="TextIndent3"><font color="#0000FF">public class</font><b> FirstProject 
+                        {</b></p>
+                <p class="TextIndent3"><b>}</b></p>
+                <p>You can think of a class as a code segment. But you have to tell Java where 
+                    code segments start and end. You do this with curly brackets. The start of a 
+                    code segment is done with a left curly bracket { and is ended with a right curly 
+                    bracket }. Anything inside of the left and right curly brackets belong to that 
+                    code segment.</p>
+                <p>What's inside of the left and right curly brackets for the class is another 
+                    code segment. This one:</p>
+                <p class="TextIndent3"><font color="#0000FF">public static void</font> <b><i>main</i>(</b> 
+                    String[ ] args <b>) {</b></p>
+                <p><br>
+                    <b><span class="TextIndent3">}</span></b></p>
+                <p>The word &quot;main&quot; is the important part here. Whenever a Java programme 
+                    starts, it looks for a method called main. (A method is just a chunk of code. 
+                    You'll learn more about these later.) It then executes any code within the curly 
+                    brackets for main. You'll get error messages if you don't have a main method 
+                    in your Java programmes. But as its name suggest, it is the main entry point 
+                    for your programmes.</p>
+                <p>The blue parts before the word &quot;main&quot; can be ignored for now. </p>
+                <p>(If you're curious, however, public means that the method can be seen outside 
+                    of this class; static means that you don't have to create a new object; and 
+                    void means it doesn't return a value - it just gets on with it. The parts between 
+                    the round brackets of main are something called command line arguments. Don't 
+                    worry if you don't understand any of that, though.)</p>
+                <p>The important point to remember is that we have a class called FirstProject. 
+                    This class contains a method called main. The two have their own sets of curly 
+                    brackets. But the main chunk of code belongs to the class FirstProject.</p>
+                <p>In the next part, you'll learn how to run your Java programmes.</p>
+                
+                <div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="java_comments.html">Java Comments</a></li>
+                            <li><a href="running_your_java_programmes.html">Running your Java Programmes</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

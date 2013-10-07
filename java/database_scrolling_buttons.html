@@ -1,0 +1,115 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+<p>What we'll do now is to add four buttons to the form. The buttons will enable 
+  us to move forward through the records, move back, move to the last record, 
+  and move to the first record.</p>
+<p>So add a new panel to your form. Enlarge it and then add for buttons to the 
+  panel. Change the variable names of the buttons to the following:</p>
+<p align="center"><b>btnNext<br>
+  btnPrevious<br>
+  btnLast<br>
+  btnFirst</b></p>
+<p>Change the text on each button the Next, Previous, Last, First. You form will 
+  then look something like this:</p>
+<p align="center"><img src="images/databases/forms/form_design3.gif" width="408" height="261" alt="Add buttons to the Java form"></p>
+<p>&nbsp;</p>
+<h3>Move to the Next Record</h3>
+<p>Double click your Next button to create a code stub. </p>
+<p>You need to do two things with the Next button: first, check if there is a 
+  next record to move to; and second, if there is a next record, display it in 
+  the Text Fields. We can create an IF Statement for this. But it needs to be 
+  wrapped up in a try &#133; catch block. So add the following to your Next button 
+  code stub:</p>
+<p> <b>try {<br>
+  <span class="TextIndent2">if ( rs.next( ) ) {</span></b></p>
+<p> <b><span class="TextIndent2">}</span><br>
+  <span class="TextIndent2">else {</span><br>
+  <span class="TextIndent3">rs.previous( );</span><br>
+  <span class="TextIndent3">JOptionPane.showMessageDialog(Workers.this, &quot;End 
+  of File&quot;);</span><br>
+  <span class="TextIndent2">}</span><br>
+  }<br>
+  catch (SQLException err) {<br>
+  <span class="TextIndent2">JOptionPane.showMessageDialog(Workers.this, err.getMessage());</span><br>
+  }</b></p>
+<p><br>
+  The IF Statement moves the ResultSet on one record at a time. If there isn't 
+  a next record then a value of false is returned. The Else part moves the ResultSet 
+  back one record. That's because the Cursor will have moved past the last record.</p>
+<p>In the curly brackets for the IF Statement we can add the code to display the 
+  record in the Text Fields:</p>
+<p class="TextIndent2"><b>int id_col = rs.getInt(&quot;ID&quot;);<br>
+  String id = Integer.toString(id_col);<br>
+  String first = rs.getString(&quot;First_Name&quot;);<br>
+  String last = rs.getString(&quot;Last_Name&quot;);<br>
+  String job = rs.getString(&quot;Job_Title&quot;);</b></p>
+<p class="TextIndent2"><b>textID.setText(id);<br>
+  textFirstName.setText(first);<br>
+  textLastName.setText(last);<br>
+  textJobTitle.setText(job);</b></p>
+<p>This is the same code we have in our DoConnect method. (We could create a new 
+  method, so as not to duplicate any code, but we'll keep it simple.)</p>
+<p>The code for your Next button should now look like this:</p>
+<p align="center"><img src="images/databases/forms/code_Next.gif" width="473" height="347" alt="Java code for the Next Record button" border="1"></p>
+<p>When you've added your code, run your programme and test it out. Keep clicking 
+  your next button and you'll scroll through all the records in the table. However, 
+  there is a problem. </p>
+<p>When you get to the last record, you should see an error message appear:</p>
+<p align="center"><img src="images/databases/forms/form_run_error.gif" width="464" height="291" alt="ResultSet error message"></p>
+<p>&nbsp;</p>
+<p>The problem is that we've added an <b>rs.previous</b> line. However, we've 
+  used the default ResultSet type. As we explained in the last section, this gets 
+  you a ResultSet that can only move forward. We can use the type suggested in 
+  the error message.</p>
+<p>Stop your programme and return to your coding window. In your DoConnect method, 
+  locate the following line:</p>
+<p class="TextIndent2"><b>stmt = con.createStatement( );</b></p>
+<p>Change it to this (yours need to go on one line):</p>
+<p class="TextIndent2"><b>stmt = con.createStatement( ResultSet.TYPE_SCROLL_INSENSITIVE, 
+  ResultSet.CONCUR_UPDATABLE );</b></p>
+<p>The ResultSet type will now allow us to scroll backwards as well as forwards.</p>
+<p>Run your programme again. Click the Next button until you get to the last record. 
+  You should see the error message from the <b>try</b> part of the <b>try &#133; 
+  catch</b> block appear:</p>
+<p align="center"><img src="images/databases/forms/form_run_error2.gif" width="420" height="290" alt="End of File error message"></p>
+<p>In the next lesson, you'll learn how to backwards through your database records.</p>
+<P>&nbsp;</P>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="databases_and_java_forms.html">Databases and Java Forms</a></li>
+                            <li><a href="move_back_through_a_java_database.html">Move Back through a Java Database</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

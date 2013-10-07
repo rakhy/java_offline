@@ -1,0 +1,123 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">	
+<p>Radio buttons are usually used to select just one item from a list, rather 
+  than the multiple items available with check boxes. Let's see how they work.</p>
+<p>Drag and drop a panel onto your form. Then locate the Radio Button control 
+  in the NetBeans palette. Drag a Radio button onto your new palette. It should 
+  look like this:</p>
+<p align="center"><img src="images/forms/radButton.gif" width="126" height="122" alt="A Radio Button dragged onto a Java Form" border="1"></p>
+<p>The default text for the first radio button is <b>jRadioButton1</b>. We'll 
+  use our radio buttons to allow a user to select a payment method. So change 
+  the text of your radio button to <b>Credit Card</b>. (The text can be changed 
+  in the same way as you did for check boxes. Again, we'll leave the variable 
+  name on the default of <b>jRadioButton1</b>.)</p>
+<p align="center"><img src="images/forms/radButton_rename.gif" width="126" height="114" border="1" alt="Rename the Radio Button"></p>
+<p>Add two more radio buttons to the panel. Change the text to Debit Card, and 
+  PayPal:</p>
+<p align="center"><img src="images/forms/radButton_rename2.gif" width="132" height="121" border="1" alt="Three Radio Buttons added to  a Java Form"></p>
+<p>There is, however, a problem with the radio buttons you've just added. To see 
+  what the problem is, run your programme again. Now select one of the radio buttons. 
+  Try selecting another radio button and you'll find that you can indeed select 
+  more than one at the same time:</p>
+<p align="center"><img src="images/forms/radButton_selected.gif" width="121" height="95" border="1" alt="All three buttons are selected"></p>
+<p>With our radio buttons, though, we only want the user to select one payment 
+  option. To solve the problem, Java lets you to create something called a <b>ButtonGroup</b>. 
+  As its name suggest, this allows you to group buttons under one name. You can 
+  then add radio buttons to the group. Once you've added buttons to the group, 
+  only one option is available for selection.</p>
+<p>To see how the ButtonGroup works, add the following method to your code, somewhere 
+  near the top:</p>
+<p><span class="TextIndent2"><b>private void groupButton( ) {</b></span><br>
+  <br>
+  <span class="TextIndent3"><b>ButtonGroup bg1 = new ButtonGroup( );</b></span></p>
+<p class="TextIndent3"><b>bg1.add(jRadioButton1);<br>
+  bg1.add(jRadioButton2);<br>
+  bg1.add(jRadioButton3);</b></p>
+<p class="TextIndent2"><b>}</b></p>
+<p>When you do, you'll see that NetBeans has alerted to you to a problem, and 
+  underlined some code in red. It has done this because it can't find a class 
+  called ButtonGroup, so can't create a new object from it.</p>
+<p>To solve this problem, you need to import the relevant class from the Swing 
+  library. So scroll up to the very top of your code, and add the following import 
+  statement:</p>
+<p class="TextIndent2"><b>import javax.swing.ButtonGroup;</b></p>
+<p>The red underline should now be gone.</p>
+<p>Our groupButton method adds radio buttons to the ButtonGroup object, with the 
+  use of the add method:</p>
+<p class="TextIndent2"><b>bg1.add( radio_button_name );</b></p>
+<p>There's one line for every radio button on our form.</p>
+<p>We can call the groupButton method from the constructor. That way, the radio 
+  buttons will be grouped when the form loads. Add the following method call to 
+  your constructor:</p>
+<p align="center"><img src="images/forms/radButton_call.gif" width="319" height="100" alt="A call from a Java constructor" border="1"></p>
+<p>The top of your code window should look like this:</p>
+<p align="center"><img src="images/forms/radButton_top_code.gif" width="443" height="199" border="1" alt="Code so far"></p>
+<p>Run your form again, and try to select more than one radio button. You should 
+  find that you can only select one in the group.</p>
+<p>To get at which radio button was selected, again there's an <b>isSelected</b> 
+  method we can use.</p>
+<p>Add a normal button to your form. When we click this button we'll display a 
+  message box stating which radio button was clicked. </p>
+<p>Change the variable name of your button to btnRadios. Change the text property 
+  to Payment Option. </p>
+<p>Now double click your new button to create a code stub. Add the following:</p>
+<p align="center"><img src="images/forms/radButton_code.gif" width="341" height="245" border="1" alt="Java code to select a Radio Button option"></p>
+<p>All we're doing here is checking which radio button is selected. We're then 
+  getting the text from the radio button and storing it in a variable called radioText.</p>
+<p>We can have a message box to display which payment option was selected. Add 
+  the following line to the bottom of your button code, just below the final IF 
+  statement:</p>
+<p class="TextIndent2"><font size="2"><b>javax.swing.JOptionPane.showMessageDialog( 
+  FormObjects.this, radioText );</b></font></p>
+<p>This line is so long that we've had to reduce the font size! But you've met 
+  the JOptionPane in a previous section. The only difference is the first item 
+  between the round brackets. Because we were using a console, the first item 
+  was null. Now we have:</p>
+<p class="TextIndent2"><b>FormObjects.this</b></p>
+<p>The first item between the round brackets is for the window in which you want 
+  to display the message box. <b>Null</b> meant no window. <b>FormObjects.this</b> 
+  means this component (the form) of the FormObjects class.</p>
+<p>Run your programme again, and select an item from your radio button. Then click 
+  your button. You should see something like the following:</p>
+<p align="center"><img src="images/forms/resize_form_message.gif" width="484" height="196" border="1" alt="A Java form showing that a Radio button option has been selected"></p>
+<p>In the next part, you'll see how to add menus to your Java Forms.</p>
+<P>&nbsp;</P>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="java_check_boxes.html">Java Check Boxes</a></li>
+                            <li><a href="java_menus.html">Java Menus</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

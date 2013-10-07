@@ -1,0 +1,81 @@
+
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+            </span>Now that the number buttons are working on your Java calculator, the next thing 
+  to do is to handle the plus button. The only thing our plus button needs to 
+  do is to store whatever number is currently in the text field. It's just a record 
+  of the first number to be added. Later, we'll also record the fact that it was 
+  the plus button that was clicked, rather than the minus, or the divide, or the 
+  multiply button.</p>
+<p>To store the value, we need to set up a field variable, that's a variable outside 
+  of any button code. This is so that all the buttons can see what has been stored 
+  in it.</p>
+<p>Add the following variable near the top of the coding window: (You can place 
+  it near the bottom, with the field variables NetBeans has set up for the form 
+  objects, but we'll keep our variables separate.)</p>
+<p class="TextIndent2"><b>private double total1 = 0.0;</b></p>
+<p>Here's the code window:</p>
+<p align="center"><img src="images/forms/field_var_total1.gif" width="456" height="150" border="1" alt="Java code showing a double variable"></p>
+<p>So we're setting up a variable called <b>total1</b>. The type of variable is 
+  a <b>double</b>. Its default value is 0.0.</p>
+<p>To store the value from the text field, we need to get the text. But we'll 
+  need to convert it from a String to a Double. You can do so with the parseDouble 
+  method of the Double object:</p>
+<p class="TextIndent2"><b>Double.parseDouble( txtDisplay.getText( ) )</b></p>
+<p>In between the round brackets of parseDouble we get the text from the txtDisplay 
+  text field.</p>
+<p>However, when we store the value from the text field into the <b>total1</b> 
+  variable, we need to retain what is already in total1. We can also clear the 
+  text field, ready for the second number. </p>
+<p>So return to Design view in NetBeans. Double click your Plus button to generate 
+  the code stub. Now add the following two lines to your plus button:</p>
+<p class="TextIndent2"><b>total1 = total1 + Double.parseDouble( txtDisplay.getText( 
+  ) ) ;<br>
+  txtDisplay.setText(&quot;&quot;);</b></p>
+<p>In between the round brackets of setText, we have a pair of double quotes, 
+  with no space between them. This is enough to clear the text field.</p>
+<p>And that's it for the Plus button, for the moment. We'll come back to it later. 
+  All we're doing, though, is storing a number in the total1 variable, and keeping 
+  what is already there. Once the number is stored, we've cleared the text field. 
+  The user can now enter a second number to be added to the first.</p>
+<p>in the next part, we'll add code for the equals button on our calcualtor.</p>
+<P>&nbsp;</P>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="java_events.html">Java Events</a></li>
+                            <li><a href="calculator_equals_button.html">The Equals Button</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

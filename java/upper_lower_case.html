@@ -1,0 +1,69 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+</p>Converting your Java strings of text to upper or lower case is fairly straightforward: 
+  just use the inbuilt methods toUpperCase and toLowerCase. <p></P>
+<p>Start a new project for this, and add the following code:</p>
+<p align="center"><img src="images/strings/change_case_upper.gif" width="377" height="268" border="1" alt="Java code showing how to convert to uppercase"></p>
+<p>The first two lines of code just set up a String variable to hold the text 
+  &quot;text to change&quot;, and then we print it out. The third line sets of 
+  a second String variable called result. The fourth line is where we do the converting:</p>
+<p class="TextIndent2"><b>result = changeCase.toUpperCase( );</b></p>
+<p>To use a string method you first type the string you want to work on. For us, 
+  this was the string in the variable called <b>changeCase</b>. Type a dot after 
+  the variable name and you'll see a list of available methods that you can use 
+  on your string. Select <b>toUpperCase</b>. (The method needs the empty round 
+  brackets after it.)</p>
+<p>After Java has changed the word to uppercase letters, we're storing the new 
+  string into our result variable. </p>
+<p>When the programme is run, the Output window displays the following:</p>
+<p align="center"><img src="images/strings/change_case_upper_output.gif" width="321" height="96" border="1" alt="Output of toUpperCase code"></p>
+<p>But you don't have to store the converted word in a new variable. This would 
+  work just as well:</p>
+<p class="TextIndent2"><b>System.out.println( changeCase.toUpperCase( ) );</b></p>
+<p>Here, Java will just get on with converting the string, without needing to 
+  assign the result to a new variable.</p>
+<p></p>
+<p>If you want to convert to lowercase, just use the <b>toLowerCase</b> method 
+  instead. It is used in exactly the same way as <b>toUpperCase</b>.</p>
+<p>In the next part, you'll see how to compare strings in Java.</p>
+
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="java_strings.html">More on Strings</a></li>
+                            <li><a href="comparing_java_strings.html">Comparing Strings</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>
+

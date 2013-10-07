@@ -1,0 +1,92 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+<p>You don't have to output everything to a terminal window in Java. In this section, 
+  you'll be writing a calculator programme that makes use of forms. The form will 
+  have buttons and a text box. We'll start off with a very simple calculator that 
+  can only add up, and then extend its capabilities so that it can subtract, divide 
+  and multiply. The calculator will look something like this:</p>
+<p align="center"><img src="images/forms/calculator_add_done.gif" width="400" height="339" alt="The Finshed Java Calculator"></p>
+<p>(The above screenshot was taken on a Windows XP machine. Your calculator will 
+  look different if you have, say, a Linux operating system, or an Apple Mac.)</p>
+<p>Let's make a start.</p>
+<h3><br>
+  NetBeans and Java Forms</h3>
+<p>Developing a Graphic User Interface (GUI) using Java can be an art-form in 
+  itself, as there's quite a lot to get used to: Components, Containers, Layout 
+  Managers, and a whole lot more besides. The NetBeans development environment, 
+  however, has greatly simplified the creation of forms, and we'll use this to 
+  drag and drop controls onto a frame.</p>
+<p>Rather than go through reams of GUI theory, we'll just jump straight into it.</p>
+<p>Create a new project for this by clicking <b>File &gt; New Project</b> from 
+  the NetBeans menu at the top. Select <b>Java &gt; Java Application</b> from 
+  the list boxes, and then click the Next button.</p>
+<p>On step 2 of the wizard, type <b>MyCalculator</b> as the project name. At the 
+  bottom, uncheck &quot;Create main class&quot;. This is because a main method 
+  will be created for us by NetBeans when we add a form. Step 2 of the wizard 
+  should look like this:</p>
+<p align="center"><img src="images/forms/wizard_2.gif" width="460" height="303" border="1" alt="Step 2 od the NetBeans wizard"></p>
+<p>Click the Finish button, and NetBeans will create the project, but not much 
+  else. Have a look at the Projects area on the left in NetBeans and you should 
+  see this (If you can't see the Projects area, click <b>Window &gt; Projects</b> 
+  from the NetBeans menu at the top):</p>
+<p align="center"><img src="images/forms/projects.gif" width="288" height="164" border="1" alt="The Projects area in NetBeans"></p>
+<p>Normally, there's a .<b>java</b> file under the Source Packages name. But because 
+  we unchecked the &quot;Create main class&quot; box, there's no java class file 
+  there.</p>
+<p>What we'll do is to add a Form to the project. When the form is created, it 
+  will be created in its own java class file.</p>
+<p>To add a form, right click the project name in the Projects window. A menu 
+  will appear:</p>
+<p align="center"><img src="images/forms/projects_rightClick.gif" width="488" height="295" border="1" alt="right-click to add a new Java form"></p>
+<p>Select <b>New &gt; JFrame</b> Form from the menu. When you do, you should see 
+  the following wizard appear:</p>
+<p align="center"><img src="images/forms/wizard_form.gif" width="380" height="197" border="1" alt="The Form wizard"></p>
+<p>Here, you are being asked for a name for your Class, and a package name. We've 
+  already created the project, and called it <b>MyCalculator</b>. The package 
+  name and class will go into the project. So, for your Class Name type <b>JavaCalculator</b>. 
+  In the blank package text box, type <b>jCalculator</b>. So we're creating a 
+  class called JavaCalculator, which is in the jCalculator package, which is in 
+  the MyCalculator project.</p>
+<p>Click the Finish button to complete the process.</p>
+<p>In the next part, you'll see what happens after you click finish, and explore 
+  the various windows of the NetBeans IDE.</p>
+<P>&nbsp;</P>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="write_to_textfile.html">Write to a Text File</a></li>
+                            <li><a href="form_views.html">Exploring Form Views</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

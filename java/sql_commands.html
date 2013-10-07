@@ -1,0 +1,106 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+</span>In the previous lesson, you created records in your Java DB database table. 
+  In this lesson, you'll learn a few SQL commands so that you can manipulate records 
+  in a table.</p>
+<p>&nbsp;</p>
+<p>SQL stands for <b>Structured Query Languag</b>e, and is a way to query databases. 
+  You can select records, insert, delete, and update records, create tables, drop 
+  tables, and more besides. It's quite a powerful tool.</p>
+<p>SQL uses simple keywords to do the work. If you want to select all the records 
+  from a table, the words SELECT and FROM are used, along with the &quot;all records&quot; 
+  symbol, which is <b>*</b>:</p>
+<p align="center"><b>SELECT * FROM table_name</b></p>
+<p>If you look at the top half of the NetBeans window, you'll see that a SELECT 
+  statement has already been set up: (NOTE: SQL is not case sensitive)</p>
+<p align="center"><b>select * from ADMIN.WORKERS</b></p>
+<p>This says &quot;Select all the records from the table called Workers&quot;. 
+  (The ADMIN part, before the dot of Workers, is something called a Schema. This 
+  describes the structure of the database, but also identifies things like users 
+  and the privileges they have. Don't worry about schemas, as we won't be going 
+  into them.)</p>
+<p>In NetBeans, you run a SQL statement by clicking the <b>Run</b> button on the 
+  toolbar:</p>
+<p align="center"><img src="images/databases/run_SQL_icon.gif" width="509" height="55" alt="The Run SQL icon" border="1"></p>
+<p>The results from the SQL statements are then displayed in the bottom half of 
+  the window:</p>
+<p align="center"><img src="images/databases/Insert_Record_Row2.gif" width="377" height="96" border="1" alt="All the records in the table have been selected"></p>
+<p>&nbsp;</p>
+<h3>The WHERE Clause</h3>
+<p>To narrow down your search results, you can use a WHERE clause with the SELECT 
+  statement:</p>
+<p align="center"><b>SELECT * FROM table_name WHERE column_name=value</b></p>
+<p>After the keyword WHERE you need the name of a column from your table. You 
+  then type an equals sign, followed by a value. As an example, here's a SQL statement 
+  that returns all the programmers in our table:</p>
+<p align="center"><b>SELECT * FROM ADMIN.WORKERS WHERE JOB_TITLE='Programmer'</b></p>
+<p>To try this SQL Statement out, right-click your table name in the <b>Services</b> 
+  area. From the menu that appears, select <b>Execute Command</b>:</p>
+<p align="center"><img src="images/databases/run_SQL_execute.gif" width="364" height="265" alt="The Execute Command menu item"></p>
+<p>When you click on Execute Command, a new window appears. Type the above SQL 
+  Statement, and then click the Run icon:</p>
+<p align="center"><img src="images/databases/run_SQL_execute2.gif" width="476" height="62" alt="Running a SQL command" border="1"></p>
+<p>The results will be displayed in the bottom half of the window:</p>
+<p align="center"><img src="images/databases/run_SQL_results.gif" width="391" height="99" alt="The results from the SQL command" border="1"></p>
+<p>As you can see, two rows are returned from the query.</p>
+<p>You can also use the keyword LIKE with the WHERE clause. This then replaces 
+  the equals sign. LIKE is usually used with a wildcard character. The wildcard 
+  character % means &quot;any characters&quot;, for example, while an underscore 
+  is used for just a single character. </p>
+<p>Instead of the equals sign or the keyword LIKE, you can also use the conditional 
+  operators (Greater Than, Less Than, etc.). If we had a salary column, we could 
+  search for all workers who are getting paid more than 1000 a week:</p>
+<p align="center"><b>SELECT * FROM ADMIN.WORKERS WHERE SALARY &gt; 1000</b></p>
+<p><br>
+  <b>Exercise</b><br>
+  Try running the following SQL Statement:</p>
+<p align="center"><b>SELECT * FROM ADMIN.WORKERS WHERE JOB_TITLE LIKE '%er'</b></p>
+<p>How many results are displayed?</p>
+<p></p>
+<p>&nbsp;</p>
+<p>We'll leave SQL Statements there, as we now have enough to start programming. 
+  Before doing so, however, close down the connection to your table by right clicking 
+  it in the Services are. From the menu, select Disconnect:</p>
+<p align="center"><img src="images/databases/table_disconnect.gif" width="364" height="265" alt="Disconnecting from your  Java DB database"></p>
+<p>We'll connect to this database and table again, using Java code this time</p>
+<P>&nbsp;</P>
+
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="adding_records_to_a_java_database_table.html">Adding New Records</a></li>
+                            <li><a href="connect_to_a_database_using_java_code.html">Connect to a Database Using Java Code</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

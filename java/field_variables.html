@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+<p>In a previous section, we talked about variables inside of methods. The variables 
+  you set up inside of methods are only available to those methods. They are not 
+  available to other methods. They are said to have local scope.</p>
+<p>However, you can set up variables outside of methods that all the methods in 
+  your class can see. These are known as Field variables (or Instance variables). 
+  You set them up in exactly the same way as any other variable. Add the following 
+  four fields to <a href="write_your_own_java_classes.html">your new StudentResults 
+  class</a>:</p>
+<p align="center"><img src="images/classes/sr_fields.gif" width="259" height="187" border="1" alt="Global field variables"> 
+</p>
+<p>We're setting up four string variables (four string fields). As the names of 
+  the fields suggest, the string will hold a person's name, an exam name, a score, 
+  and a grade. These four fields will be available to all the methods that we 
+  write in this class, and won't be local to any one method. They are said to 
+  have global scope.</p>
+<p>To see just how global they are, click back on to your ExamDetails class, the 
+  one with the main method. Add the following line of code to create a new object 
+  from your StudentResults class:</p>
+<p align="center"><img src="images/classes/exams_main_new_object.gif" width="457" height="202" border="1" alt="Create a new object from the StudentResults class"></p>
+<p>This is the same as we did in the previous section - used the new keyword to 
+  create a new object. The name of the object will be <b>aStudent</b>, and it 
+  is of type StudentResults, which is our class.</p>
+<p>On the next line, type the name of the variable (aStudent), followed by a dot. 
+  As soon as you type the dot NetBeans display a popup list of methods and properties 
+  available to your object:</p>
+<p align="center"><img src="images/classes/exams_main_fields.gif" width="420" height="337" border="1" alt="List showing available field variables"></p>
+<p>The four fields that we set up are on the list. They are not methods, but something 
+  called a property. The fact that they are on the list at all means that they 
+  have global scope. If they had local scope they wouldn't be on the list. </p>
+<p>You can set values for properties. Try this: add the following highlighted 
+  code to your main method:</p>
+<p align="center"><img src="images/classes/exams_main_fields2.gif" width="451" height="242" border="1" alt="Accsessing a property"></p>
+<p>We've selected the <b>Exam_Name</b> field from the list and assigned it the 
+  value &quot;VB NET&quot;. The next line then gets the value of Exam_Name from 
+  the aStudent object. The result is stored in a variable called exam, and then 
+  printed out. When you run the programme, the output is the string &quot;VB Net&quot;.</p>
+<p>So the four variables we've set up are now available to both classes.</p>
+<p>However, it's not a good idea to make field variables global like this. You 
+  tend to lose track of just what values are being held in them, and it therefore 
+  makes debugging your code a lot harder. It's considered good coding to narrow 
+  the scope of field variables.</p>
+<p>To make a field variable available only to a particular class, you add the 
+  Java keyword <b>private</b> just before the field declaration. Change the code 
+  in your StudentResults class to this:</p>
+<p align="center"><img src="images/classes/sr_fields_private.gif" width="281" height="184" border="1" alt="Making the filed variables private"></p>
+<p>Now, only code within the StudentResults class can see these field variables. 
+  To check, go back to your main method. You should see some warnings and red 
+  underlines:</p>
+<p align="center"><img src="images/classes/exams_main_fields_warnings.gif" width="492" height="176" border="1" alt="Properties are now local in scope"></p>
+<p>Delete the three lines at the bottom. Type <b>aStudent</b> and then a dot again 
+  to see the NetBeans popup list:</p>
+<p align="center"><img src="images/classes/exams_main_fields3.gif" width="359" height="197" border="1" alt="Field variables are no longer on the NetBeans list"></p>
+<p>As you can see, the four field variables have now vanished. They have vanished 
+  because they no longer have global scope, and therefore can't be seen from the 
+  ExamDetails class.</p>
+<p>In the next part, you'll learn about something called a <b>class constructor</b>.</p>
+<P>&nbsp;</P>
+ 
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="write_your_own_java_classes.html">Java Classes</a></li>
+                            <li><a href="class_constructor.html">Class Constructor</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+<p>The ResultSet has <b>Update</b> methods that allow you to update records not 
+  only in the ResultSet itself, but in the underlying database. Let's see how 
+  it works.</p>
+<p>Make your form a bit longer. Now add a new panel to the form. Add a new button 
+  to the panel. Change the default variable name to <b>btnUpdateRecord</b>. Change 
+  the text on the button to <b>Update Record</b>. We're also going to have buttons 
+  to create a new record in the database, to save a record, cancel any updates, 
+  and to delete a record. So add four more buttons to the panel. Make the following 
+  changes:</p>
+<p class="TextIndent2"><b>Button Variable Name</b>: btnNewRecord<br>
+  <b>Button Text</b>: New Record</p>
+<p class="TextIndent2"><b>Button Variable Name</b>: btnDeleteRecord<br>
+  <b>Button Text</b>: Delete Record</p>
+<p class="TextIndent2"><b>Button Variable Name</b>: btnSaveRecord<br>
+  <b>Button Text</b>: Save New Record</p>
+<p class="TextIndent2"><b>Button Variable Name</b>: btnCancelNewRecord<br>
+  <b>Button Text</b>: Cancel New Record</p>
+<p>When you're done, your form should look something like this one (though feel 
+  free to rearrange the buttons):</p>
+<p align="center"><img src="images/databases/forms/form_design4_B.gif" width="408" height="339" alt="New buttons added to the Java form"></p>
+<p>Double click your Update button to create a code stub.</p>
+<p>The first thing to do is get the text from the Text Fields:</p>
+<p class="TextIndent2"><b>String first = textFirstName.getText( );<br>
+  String last = textLastName.getText( );<br>
+  String job = textJobTitle.getText( );<br>
+  String ID = textID.getText( );</b></p>
+<p>If we want to update an ID field, however, we need to convert the String to 
+  an Integer:</p>
+<p class="TextIndent2"><b>int newID = Integer.parseInt( ID );</b></p>
+<p>The Integer object has a method called <b>parseInt</b>. In between the round 
+  brackets of parseInt, you type the string that you're trying to convert. </p>
+<p>Now that we have all the data from the Text Fields, we can call the relevant 
+  update methods of the ResultSet object:</p>
+<p class="TextIndent2"><b>rs.updateString( &quot;First_Name&quot;, first );</b></p>
+<p>There are quite a few different update methods to choose from. The one above 
+  uses <b>updateString</b>. But you need the field type from your database table 
+  here. We have three strings (First_Name, Last_Name, Job_Title) and one integer 
+  value (ID). So we need three <b>updateString</b> methods and one <b>updateInt</b>.</p>
+<p>In between the round brackets of the update methods, you need the name of a 
+  column from your database (though this can be its Index value instead). After 
+  a comma you type the replacement data. So, in the example above, we want to 
+  update the First_Name column and replace it with the value held in the variable 
+  called first.</p>
+<p>The update methods just update the ResultSet, however. To commit the changes 
+  to the database, you issue an <b>updateRow</b> command:</p>
+<p class="TextIndent2"><b>rs.updateRow( );</b></p>
+<p>Here are all the lines of code to update the ResultSet and the database table:</p>
+<p><span class="TextIndent2"><b>try {</b></span><b><br>
+  <span class="TextIndent3">rs.updateInt( &quot;ID&quot;, newID );</span><br>
+  <span class="TextIndent3">rs.updateString( &quot;First_Name&quot;, first );</span><br>
+  <span class="TextIndent3">rs.updateString( &quot;last_Name&quot;, last );</span><br>
+  <span class="TextIndent3">rs.updateString( &quot;Job_Title&quot;, job );</span><br>
+  <span class="TextIndent3">rs.updateRow( );</span><br>
+  <span class="TextIndent3">JOptionPane.showMessageDialog(Workers.this, &quot;Updated&quot;);</span><br>
+  <span class="TextIndent2">}</span><br>
+  <span class="TextIndent2">catch (SQLException err) {</span><br>
+  <span class="TextIndent3">System.out.println(err.getMessage() );</span><br>
+  <span class="TextIndent2">}</span></b></p>
+<p>Again, we need to wrap it all up in a <b>try &#133; catch</b> statement, just 
+  in case something goes wrong. Notice, too, that we've added a message box for 
+  a successful update.</p>
+<p>Here's the entire code to add for your Update Button:</p>
+<p align="center"><img src="images/databases/forms/code_Update.gif" width="429" height="293" alt="Java code to update a database record " border="1"></p>
+<p>Run your programme and try it out. Change some data in a Text Field (Tommy 
+  to Timmy, for example). Then click your Update button. Scroll past the record 
+  then go back. The change should still be there. Now close down your programme 
+  and run it again. You should find that the changes are permanent.</p>
+<p>In the next lesson, you'll see how to add a new record</p>
+<P>&nbsp;</P>
+<div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="move_to_the_first_and_last_records.html">Move First, Move Last</a></li>
+                            <li><a href="add_a_new_record_to_the_database.html">Add a New record</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" href="../images/jquery.mobile-1.2.0.min.css" />
+        <script src="../images/jquery-1.8.2.min.js"></script>
+        <script src="../images/jquery.mobile-1.2.0.min.js"></script>
+    </head> 
+    <body> 
+
+        <div data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Learn Java- Complete Offline Beginners Guide</h1>
+            </div><!-- /header -->
+            <p></p>
+            <div data-role="content">
+                <P>If you don't know how many items are going to be held in your array, you may 
+                    be better off using something called an <b>ArrayList</b>. An ArrayList is a 
+                    dynamic data structure, meaning items can be added and removed from the list. 
+                    A normal array in java is a static data structure, because you stuck with the 
+                    initial size of your array.</P>
+                <p>To set up an ArrayList, you first have to import the package from the <b>java.util 
+                        library</b>:</p>
+                <p class="TextIndent2"><b>import java.util.ArrayList;</b></p>
+                <p>You can then create a new ArrayList object:</p>
+                <p class="TextIndent2"><b>ArrayList listTest = new ArrayList( );</b></p>
+                <p>Notice that you don't need any square brackets this time.</p>
+                <p>Once you have a new ArrayList objects, you can add elements to it with the 
+                    add method:</p>
+                <p class="TextIndent2"><b>listTest.add( &quot;first item&quot; );<br>
+                        listTest.add( &quot;second item&quot; );<br>
+                        listTest.add( &quot;third item&quot; );<br>
+                        listTest.add( 7 );</b></p>
+                <p>In between the round brackets of add you put what it is you want to add to 
+                    the ArrayList. You can only add objects, however. The first three items we've 
+                    added to the list above are String objects. The fourth item is a number. But 
+                    this will be a number object of type Integer, rather than the primitive data 
+                    type int.</p>
+                <p>Items in the list can be referenced by an Index number, and by using the get 
+                    method:</p>
+                <p class="TextIndent2"><b>listTest.get( 3 )</b></p>
+                <p>This line will get the item at Index position 3 on the list. Index numbers 
+                    start counting at zero, so this will be the fourth item.</p>
+                <p>You can also remove items from an ArrayList. You can either use the Index number:</p>
+                <p class="TextIndent2"><b>listTest.remove(2);</b></p>
+                <p>Or you can use the value on the list:</p>
+                <p class="TextIndent2"><b>listTest.remove( &quot;second item&quot; );</b></p>
+                <p>Removing an item will resize the ArrayList, so you have to be careful when 
+                    trying to get an item on the list when using its Index number. If we've removed 
+                    item number 2, then our list above will contain only 3 items. Trying to get 
+                    the item with the Index number 3 would then result in an error.</p>
+                <p>To go through each item in your ArrayList you can set up something called an 
+                    <b>Iterator</b>. This class can also be found in the <b>java.util</b> library:</p>
+                <p class="TextIndent2"><b>import java.util.Iterator;</b></p>
+                <p>You can then attach your ArrayList to a new Iterator object:</p>
+                <p class="TextIndent2"><b>Iterator it = listTest.iterator( );</b></p>
+                <p>This sets up a new Iterator object called it that can be used to go through 
+                    the items in the ArrayList called listTest. The reason for using an Iterator 
+                    object is because it has methods called next and hasNext. You can use these 
+                    in a loop:</p>
+                <p><span class="TextIndent2"><b>while ( </b>it.hasNext( )<b> ) {</b></span><b><br>
+                        <span class="TextIndent3">System.out.println( it.next( ) );</span><br>
+                        <span class="TextIndent2">}</span></b></p>
+                <p>The method hasNext returns a Boolean value. The value will be false if there 
+                    are no more items in the ArrayList. The next method can be used to go through 
+                    all the items in the list. </p>
+                <p>To test all this theory out, try the following code:</p>
+                <p align="center"><img src="images/arrays/ArrayList.gif" width="406" height="388" border="1" alt="Java code showing an array list"></p>
+                <p>Notice the line that prints out the entire list:</p>
+                <p class="TextIndent2"><b>System.out.println( &quot;Whole list=&quot; + listTest 
+                        );</b></p>
+                <p>This gives you a quick way to see which items are on your list, if it gets 
+                    a bit too long.</p>
+                <p>When the code is run, the Output window will display the following:</p>
+                <p class="TextIndent2"><b>first item<br>
+                        second item<br>
+                        third item<br>
+                        7<br>
+                        Whole list=[first item, third item, 7]<br>
+                        Position 1=third item </b></p>
+                <p>To sum up, then, use an ArrayList when you're not sure how many elements are 
+                    going to be in a list of items.</p>
+                <p><br>
+                    We'll leave arrays, for now, and move on. In the next section, we'll tackle 
+                    strings.</p>
+                
+                <div data-role="footer" data-theme="b">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="multi-dimensional_arrays.html">Multi-Dimensional Arrays</a></li>
+                            <li><a href="java_strings.html">Java Strings</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+</html>
